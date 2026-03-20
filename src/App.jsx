@@ -1,0 +1,294 @@
+import React, { useEffect, useMemo, useState } from "react";
+import { loadCsv } from "./lib/csv.js";
+import { byKey, normaliseMemberApiRows, clean } from "./lib/joins.js";
+import ChamberMap from "./components/ChamberMap.jsx";
+import SeatPanel from "./components/SeatPanel.jsx";
+import membersJson from "./data/members.json";
+import voteDetailsJson from "./data/voteDetails.json";
+import { normaliseVotesDataset } from "./lib/votes.js";
+import "./styles.css";
+
+function formatIrishDate(isoDate) {
+  if (!isoDate) return "";
+  const d = new Date(`${isoDate}T00:00:00`);
+  return new Intl.DateTimeFormat("en-IE", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(d);
+}
+
+function makeVoteOptionLabel(vote) {
+  const date = formatIrishDate(vote.date);
+  const title = vote.debateShowAs || "Division";
+  return date ? `${date} | ${title}` : title;
+}
+
+function extractSectionNumber(section) {
+  if (!section) return "";
+  const match = String(section).match(/(\d+)$/);
+  return match ? match[1] : "";
+}
+
+function buildDebateUrl(date, section) {
+  const sectionNumber = extractSectionNumber(section);
+  if (!date || !sectionNumber) return null;
+  return `https://www.oireachtas.ie/en/debates/debate/dail/${date}/${sectionNumber}/`;
+}
+
+export default function App() {
+  const [assignments, setAssignments] = useState([]);
+  const [members, setMembers] = useState([]);
+  const [votes, setVotes] = useState([]);
+  const [selectedVoteId, setSelectedVoteId] = useState("");
+  const [selectedSeat, setSelectedSeat] = useState(null);
+  const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    async function init() {
+      const seatingRowsRaw = await loadCsv("/seatAssignments.csv");
+
+      const seatingRows = seatingRowsRaw.map((row) => ({
+        ...row,
+        seat_label: clean(row.seat_label),
+        deputy_name: clean(row.deputy_name ?? row.Deputy),
+        member_code: clean(row.member_code ?? row.memberCode),
+        path_id: clean(row.path_id),
+      }));
+
+      const normalisedVotes = normaliseVotesDataset(voteDetailsJson);
+
+      setAssignments(seatingRows);
+      setMembers(normaliseMemberApiRows(membersJson));
+      setVotes(normalisedVotes);
+      setSelectedVoteId(normalisedVotes[0]?.id || "");
+      setSelectedSeat(null);
+    }
+
+    init();
+  }, []);
+
+  const selectedVote = useMemo(() => {
+    const vote = votes.find((v) => v.id === selectedVoteId) || null;
+    if (!vote) return null;
+
+    return {
+      ...vote,
+      debateUrl: buildDebateUrl(vote.date, vote.section),
+    };
+  }, [votes, selectedVoteId]);
+
+  const assignmentsBySeat = useMemo(
+    () => byKey(assignments, "seat_label"),
+    [assignments],
+  );
+
+  const membersByCode = useMemo(() => byKey(members, "Code"), [members]);
+
+  const seats = useMemo(() => {
+    const labels = Object.keys(assignmentsBySeat);
+
+    return labels.map((seat_label) => {
+      const assignment = assignmentsBySeat[seat_label] || null;
+
+      let member = null;
+      if (assignment?.member_code) {
+        member = membersByCode[clean(assignment.member_code)] || null;
+      }
+
+      const vote =
+        assignment?.member_code && selectedVote?.byMemberCode
+          ? selectedVote.byMemberCode[clean(assignment.member_code)] || null
+          : null;
+
+      return {
+        seat_label,
+        assignment,
+        member,
+        vote,
+      };
+    });
+  }, [assignmentsBySeat, membersByCode, selectedVote]);
+
+  const filteredSeats = useMemo(() => {
+    const q = query.toLowerCase();
+
+    return seats.filter((seat) => {
+      const haystack = [
+        seat.seat_label,
+        seat.member?.Deputy,
+        seat.member?.Party,
+        seat.member?.Constituency,
+        seat.vote?.vote,
+      ]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+
+      return haystack.includes(q);
+    });
+  }, [seats, query]);
+
+  const selected =
+    seats.find((seat) => seat.seat_label === selectedSeat) || null;
+  const hasSelection = Boolean(selected);
+
+  return (
+    <div className="app">
+      <header className="hero">
+        <div>
+          <div className="eyebrow">Interactive</div>
+          <h1>Vote Explorer | Dáil Éireann</h1>
+          <p>
+            Take a look at how TDs voted with our interactive vote explorer.
+          </p>
+        </div>
+
+        <div className="controls controls--single">
+          <select
+            value={selectedVoteId}
+            onChange={(e) => {
+              setSelectedVoteId(e.target.value);
+              setSelectedSeat(null);
+            }}
+          >
+            {votes.map((vote) => (
+              <option key={vote.id} value={vote.id}>
+                {makeVoteOptionLabel(vote)}
+              </option>
+            ))}
+          </select>
+        </div>
+      </header>
+
+      <main className="layout layout--stacked">
+        <section className="main-panel main-panel--full">
+          {selectedVote ? (
+            <div className="vote-header">
+              <div className="vote-debate-meta">
+                <span className="vote-debate-meta__label">Debate</span>
+
+                {selectedVote.debateUrl ? (
+                  <a
+                    href={selectedVote.debateUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="vote-debate-meta__link"
+                  >
+                    {selectedVote.debateShowAs || "—"}
+                  </a>
+                ) : (
+                  <span className="vote-debate-meta__value">
+                    {selectedVote.debateShowAs || "—"}
+                  </span>
+                )}
+              </div>
+
+              <div className="vote-summary">
+                <div className="vote-summary__item vote-summary__item--yes">
+                  <span className="vote-summary__dot" />
+                  Tá {selectedVote.tallies["Tá"]}
+                </div>
+                <div className="vote-summary__item vote-summary__item--no">
+                  <span className="vote-summary__dot" />
+                  Níl {selectedVote.tallies["Níl"]}
+                </div>
+                <div className="vote-summary__item vote-summary__item--abstain">
+                  <span className="vote-summary__dot" />
+                  Staon {selectedVote.tallies["Staon"]}
+                </div>
+              </div>
+            </div>
+          ) : null}
+
+          <ChamberMap
+            seats={filteredSeats}
+            selectedSeat={selectedSeat}
+            onSelect={setSelectedSeat}
+            displayMode="vote"
+          />
+        </section>
+
+        <section className="panel panel--search">
+          <div className="search-input-wrap">
+            <input
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Filter by Deputy, constituency or vote cast"
+              aria-label="Search deputies, constituencies or votes"
+            />
+            {query ? (
+              <button
+                type="button"
+                className="search-clear"
+                onClick={() => setQuery("")}
+                aria-label="Clear search"
+                title="Clear search"
+              >
+                ×
+              </button>
+            ) : null}
+          </div>
+        </section>
+
+        <section
+          className={
+            hasSelection ? "detail-grid" : "detail-grid detail-grid--single"
+          }
+        >
+          {selectedVote ? (
+            <section className="panel panel--detail">
+              <div className="vote-context-card">
+                <div className="vote-context-card__item">
+                  <span className="vote-context-card__label">
+                    Division called
+                  </span>
+
+                  {selectedVote.debateUrl ? (
+                    <a
+                      href={selectedVote.debateUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="vote-context-card__link"
+                    >
+                      {selectedVote.subject || "—"}
+                    </a>
+                  ) : (
+                    <span className="vote-context-card__value">
+                      {selectedVote.subject || "—"}
+                    </span>
+                  )}
+                </div>
+
+                <div className="vote-context-card__item">
+                  <span className="vote-context-card__label">Outcome</span>
+                  <span className="vote-context-card__value">
+                    {selectedVote.outcome || "—"}
+                  </span>
+                </div>
+
+                <div className="vote-context-card__item">
+                  <span className="vote-context-card__label">Tellers</span>
+                  <span className="vote-context-card__value">
+                    {selectedVote.tellers || "—"}
+                  </span>
+                </div>
+
+                <div className="vote-context-card__item">
+                  <span className="vote-context-card__label">Date</span>
+                  <span className="vote-context-card__value">
+                    {formatIrishDate(selectedVote.date) || "—"}
+                  </span>
+                </div>
+              </div>
+            </section>
+          ) : null}
+
+          {hasSelection ? (
+            <SeatPanel seat={selected} displayMode="vote" />
+          ) : null}
+        </section>
+      </main>
+    </div>
+  );
+}
