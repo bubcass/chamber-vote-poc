@@ -46,7 +46,9 @@ export default function App() {
 
   useEffect(() => {
     async function init() {
-      const seatingRowsRaw = await loadCsv("/seatAssignments.csv");
+      const seatingRowsRaw = await loadCsv(
+        `${import.meta.env.BASE_URL}seatAssignments.csv`,
+      );
 
       const seatingRows = seatingRowsRaw.map((row) => ({
         ...row,
