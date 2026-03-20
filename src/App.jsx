@@ -216,8 +216,8 @@ export default function App() {
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Filter by Deputy, constituency or vote cast"
-              aria-label="Search deputies, constituencies or votes"
+              placeholder="Filter by Deputy, constituency or party"
+              aria-label="Search deputies, constituencies or party"
             />
             {query ? (
               <button
