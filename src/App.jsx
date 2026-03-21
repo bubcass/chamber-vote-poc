@@ -42,6 +42,7 @@ export default function App() {
   const [selectedVoteId, setSelectedVoteId] = useState("");
   const [selectedSeat, setSelectedSeat] = useState(null);
   const [query, setQuery] = useState("");
+  const [voteFilter, setVoteFilter] = useState(null);
   const [votesLoading, setVotesLoading] = useState(true);
   const [votesError, setVotesError] = useState("");
 
@@ -108,6 +109,50 @@ export default function App() {
       debateUrl: buildDebateUrl(vote.date, vote.section),
     };
   }, [votes, selectedVoteId]);
+
+  const voteSummaryItems = useMemo(() => {
+    if (!selectedVote) return [];
+
+    const tallyYes = selectedVote.tallies?.["Tá"] ?? 0;
+    const tallyNo = selectedVote.tallies?.["Níl"] ?? 0;
+    const tallyAbstain = selectedVote.tallies?.["Staon"] ?? 0;
+    const total = tallyYes + tallyNo + tallyAbstain;
+
+    return [
+      {
+        key: "All",
+        label: "All",
+        count: total,
+        active: voteFilter === null,
+        className: "vote-summary__item--all",
+        value: null,
+      },
+      {
+        key: "Tá",
+        label: "Tá",
+        count: tallyYes,
+        active: voteFilter === "Tá",
+        className: "vote-summary__item--yes",
+        value: "Tá",
+      },
+      {
+        key: "Níl",
+        label: "Níl",
+        count: tallyNo,
+        active: voteFilter === "Níl",
+        className: "vote-summary__item--no",
+        value: "Níl",
+      },
+      {
+        key: "Staon",
+        label: "Staon",
+        count: tallyAbstain,
+        active: voteFilter === "Staon",
+        className: "vote-summary__item--abstain",
+        value: "Staon",
+      },
+    ];
+  }, [selectedVote, voteFilter]);
 
   const assignmentsBySeat = useMemo(
     () => byKey(assignments, "seat_label"),
@@ -181,6 +226,7 @@ export default function App() {
             onChange={(e) => {
               setSelectedVoteId(e.target.value);
               setSelectedSeat(null);
+              setVoteFilter(null);
             }}
             disabled={votesLoading || votes.length === 0}
           >
@@ -228,28 +274,46 @@ export default function App() {
                 )}
               </div>
 
-              <div className="vote-summary">
-                <div className="vote-summary__item vote-summary__item--yes">
-                  <span className="vote-summary__dot" />
-                  Tá {selectedVote.tallies?.["Tá"] ?? 0}
-                </div>
-                <div className="vote-summary__item vote-summary__item--no">
-                  <span className="vote-summary__dot" />
-                  Níl {selectedVote.tallies?.["Níl"] ?? 0}
-                </div>
-                <div className="vote-summary__item vote-summary__item--abstain">
-                  <span className="vote-summary__dot" />
-                  Staon {selectedVote.tallies?.["Staon"] ?? 0}
-                </div>
+              <div
+                className={`vote-summary${
+                  voteFilter ? " vote-summary--has-active" : ""
+                }`}
+              >
+                {voteSummaryItems.map((item) => (
+                  <button
+                    key={item.key}
+                    type="button"
+                    className={`vote-summary__item ${item.className}${
+                      item.active ? " vote-summary__item--active" : ""
+                    }`}
+                    onClick={() => {
+                      setVoteFilter(item.value);
+                      setSelectedSeat(null);
+                    }}
+                    aria-pressed={item.active}
+                    title={
+                      item.value === null
+                        ? "Show all votes"
+                        : item.active
+                          ? `Showing ${item.label}`
+                          : `Focus ${item.label}`
+                    }
+                  >
+                    <span className="vote-summary__dot" />
+                    {item.label} {item.count}
+                  </button>
+                ))}
               </div>
             </div>
           ) : null}
 
           <ChamberMap
             seats={filteredSeats}
+            allSeats={seats}
             selectedSeat={selectedSeat}
             onSelect={setSelectedSeat}
             displayMode="vote"
+            voteFilter={voteFilter}
           />
         </section>
 

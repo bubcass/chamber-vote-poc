@@ -5,9 +5,11 @@ import { voteColorMap } from "../lib/votes.js";
 
 export default function ChamberMap({
   seats = [],
+  allSeats = [],
   selectedSeat,
   onSelect,
   displayMode = "vote",
+  voteFilter = null,
 }) {
   const ref = useRef(null);
   const [tooltip, setTooltip] = useState(null);
@@ -24,7 +26,9 @@ export default function ChamberMap({
     const shapeSelector = "path, ellipse, rect, polygon, circle";
 
     const getSeatData = (seatLabel) =>
-      seats.find((d) => d.seat_label === seatLabel) || null;
+      allSeats.find((d) => d.seat_label === seatLabel) || null;
+
+    const visibleSeatLabels = new Set(seats.map((d) => d.seat_label));
 
     const paintSeat = (el) => {
       const seatLabel = el.getAttribute("data-seat");
@@ -37,6 +41,10 @@ export default function ChamberMap({
 
       const isSelected = seatLabel === selectedSeat;
       const isHovered = seatLabel === hoveredSeat;
+      const passesSearch = visibleSeatLabels.has(seatLabel);
+      const passesVoteFilter = !voteFilter || seat?.vote?.vote === voteFilter;
+
+      const dimmed = !passesSearch || !passesVoteFilter;
 
       const applyStateToShape = (shape) => {
         shape.style.fill = fill;
@@ -49,7 +57,7 @@ export default function ChamberMap({
           shape.style.filter =
             "brightness(0.97) drop-shadow(0 0 6px rgba(17,24,39,0.10))";
           shape.style.opacity = "1";
-        } else if (isHovered) {
+        } else if (isHovered && !dimmed) {
           shape.style.stroke = "rgba(17,24,39,0.45)";
           shape.style.strokeWidth = "1.1";
           shape.style.filter =
@@ -59,7 +67,7 @@ export default function ChamberMap({
           shape.style.stroke = "none";
           shape.style.strokeWidth = "0";
           shape.style.filter = "none";
-          shape.style.opacity = "1";
+          shape.style.opacity = dimmed ? "0.16" : "1";
         }
       };
 
@@ -90,6 +98,14 @@ export default function ChamberMap({
 
       const seatLabel = seatEl.getAttribute("data-seat");
       const seat = getSeatData(seatLabel);
+      const passesSearch = visibleSeatLabels.has(seatLabel);
+      const passesVoteFilter = !voteFilter || seat?.vote?.vote === voteFilter;
+
+      if (!passesSearch || !passesVoteFilter) {
+        setHoveredSeat(null);
+        setTooltip(null);
+        return;
+      }
 
       if (hoveredSeat !== seatLabel) {
         setHoveredSeat(seatLabel);
@@ -107,6 +123,7 @@ export default function ChamberMap({
         y: event.clientY - containerRect.top - 14,
         name: seat.member.Deputy,
         party: seat.member.Party,
+        constituency: seat.member.Constituency || "",
         color: partyColorMap[seat.member.Party] || "#666666",
         image: seat.member.imageUrl || "",
         vote: seat.vote?.vote || null,
@@ -123,6 +140,12 @@ export default function ChamberMap({
       if (!seatEl) return;
 
       const seatLabel = seatEl.getAttribute("data-seat");
+      const seat = getSeatData(seatLabel);
+      const passesSearch = visibleSeatLabels.has(seatLabel);
+      const passesVoteFilter = !voteFilter || seat?.vote?.vote === voteFilter;
+
+      if (!passesSearch || !passesVoteFilter) return;
+
       onSelect?.(seatLabel);
     };
 
@@ -135,7 +158,15 @@ export default function ChamberMap({
       svgRoot.removeEventListener("pointerleave", handlePointerLeave);
       svgRoot.removeEventListener("click", handleClick);
     };
-  }, [seats, selectedSeat, hoveredSeat, onSelect, displayMode]);
+  }, [
+    seats,
+    allSeats,
+    selectedSeat,
+    hoveredSeat,
+    onSelect,
+    displayMode,
+    voteFilter,
+  ]);
 
   return (
     <div className="map-wrap map-wrap--interactive" ref={ref}>
@@ -175,6 +206,12 @@ export default function ChamberMap({
                 />
                 {tooltip.party}
               </div>
+
+              {tooltip.constituency ? (
+                <div className="map-tooltip__constituency">
+                  {tooltip.constituency}
+                </div>
+              ) : null}
             </div>
           </div>
         </div>
