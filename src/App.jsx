@@ -4,7 +4,6 @@ import { byKey, normaliseMemberApiRows, clean } from "./lib/joins.js";
 import ChamberMap from "./components/ChamberMap.jsx";
 import SeatPanel from "./components/SeatPanel.jsx";
 import membersJson from "./data/members.json";
-import voteDetailsJson from "./data/voteDetails.json";
 import { normaliseVotesDataset } from "./lib/votes.js";
 import "./styles.css";
 
@@ -43,6 +42,8 @@ export default function App() {
   const [selectedVoteId, setSelectedVoteId] = useState("");
   const [selectedSeat, setSelectedSeat] = useState(null);
   const [query, setQuery] = useState("");
+  const [votesLoading, setVotesLoading] = useState(true);
+  const [votesError, setVotesError] = useState("");
 
   useEffect(() => {
     async function init() {
@@ -58,16 +59,44 @@ export default function App() {
         path_id: clean(row.path_id),
       }));
 
-      const normalisedVotes = normaliseVotesDataset(voteDetailsJson);
-
       setAssignments(seatingRows);
       setMembers(normaliseMemberApiRows(membersJson));
-      setVotes(normalisedVotes);
-      setSelectedVoteId(normalisedVotes[0]?.id || "");
-      setSelectedSeat(null);
     }
 
     init();
+  }, []);
+
+  useEffect(() => {
+    async function loadVotes() {
+      setVotesLoading(true);
+      setVotesError("");
+
+      try {
+        const res = await fetch(
+          `${import.meta.env.BASE_URL}data/voteDetails.json`,
+          {
+            cache: "no-store",
+          },
+        );
+
+        if (!res.ok) {
+          throw new Error(`Failed to fetch vote data (${res.status})`);
+        }
+
+        const json = await res.json();
+        const normalised = normaliseVotesDataset(json);
+
+        setVotes(normalised);
+        setSelectedVoteId((current) => current || normalised[0]?.id || "");
+      } catch (err) {
+        console.error(err);
+        setVotesError("Unable to load vote data.");
+      } finally {
+        setVotesLoading(false);
+      }
+    }
+
+    loadVotes();
   }, []);
 
   const selectedVote = useMemo(() => {
@@ -153,17 +182,30 @@ export default function App() {
               setSelectedVoteId(e.target.value);
               setSelectedSeat(null);
             }}
+            disabled={votesLoading || votes.length === 0}
           >
-            {votes.map((vote) => (
-              <option key={vote.id} value={vote.id}>
-                {makeVoteOptionLabel(vote)}
-              </option>
-            ))}
+            {votesLoading ? (
+              <option>Loading votes…</option>
+            ) : votes.length === 0 ? (
+              <option>No votes available</option>
+            ) : (
+              votes.map((vote) => (
+                <option key={vote.id} value={vote.id}>
+                  {makeVoteOptionLabel(vote)}
+                </option>
+              ))
+            )}
           </select>
         </div>
       </header>
 
       <main className="layout layout--stacked">
+        {votesError ? (
+          <section className="panel">
+            <p>{votesError}</p>
+          </section>
+        ) : null}
+
         <section className="main-panel main-panel--full">
           {selectedVote ? (
             <div className="vote-header">
@@ -189,15 +231,15 @@ export default function App() {
               <div className="vote-summary">
                 <div className="vote-summary__item vote-summary__item--yes">
                   <span className="vote-summary__dot" />
-                  Tá {selectedVote.tallies["Tá"]}
+                  Tá {selectedVote.tallies?.["Tá"] ?? 0}
                 </div>
                 <div className="vote-summary__item vote-summary__item--no">
                   <span className="vote-summary__dot" />
-                  Níl {selectedVote.tallies["Níl"]}
+                  Níl {selectedVote.tallies?.["Níl"] ?? 0}
                 </div>
                 <div className="vote-summary__item vote-summary__item--abstain">
                   <span className="vote-summary__dot" />
-                  Staon {selectedVote.tallies["Staon"]}
+                  Staon {selectedVote.tallies?.["Staon"] ?? 0}
                 </div>
               </div>
             </div>
@@ -216,8 +258,8 @@ export default function App() {
             <input
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Filter by Deputy, constituency or party"
-              aria-label="Search deputies, constituencies or party"
+              placeholder="Search Deputy, constituency or vote cast"
+              aria-label="Search deputies, constituencies or votes"
             />
             {query ? (
               <button
