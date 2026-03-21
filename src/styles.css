@@ -488,6 +488,24 @@ p {
     line-height: 1.15;
 }
 
+.member-card-link .member-card__identity h2 {
+    color: #1c1917;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    transition: color 0.15s ease;
+}
+
+.member-card-link:hover .member-card__identity h2 {
+    color: #7f6c2e;
+}
+
+.member-card-link .member-card__identity h2::after {
+    content: " ↗";
+    font-size: 0.85em;
+    color: #78716c;
+}
+
 .member-photo-ring {
     display: grid;
     place-items: center;
