@@ -35,7 +35,48 @@ function buildDebateUrl(date, section) {
   return `https://www.oireachtas.ie/en/debates/debate/dail/${date}/${sectionNumber}/`;
 }
 
+function useIframeResize() {
+  useEffect(() => {
+    function sendHeight() {
+      const height = Math.max(
+        document.documentElement.scrollHeight,
+        document.body.scrollHeight,
+      );
+
+      window.parent.postMessage(
+        {
+          type: "vote-explorer:resize",
+          height,
+        },
+        "*",
+      );
+    }
+
+    const timeoutId = setTimeout(sendHeight, 100);
+
+    const resizeObserver = new ResizeObserver(() => {
+      sendHeight();
+    });
+
+    if (document.body) {
+      resizeObserver.observe(document.body);
+    }
+
+    window.addEventListener("load", sendHeight);
+    window.addEventListener("resize", sendHeight);
+
+    return () => {
+      clearTimeout(timeoutId);
+      resizeObserver.disconnect();
+      window.removeEventListener("load", sendHeight);
+      window.removeEventListener("resize", sendHeight);
+    };
+  }, []);
+}
+
 export default function App() {
+  useIframeResize();
+
   const [assignments, setAssignments] = useState([]);
   const [members, setMembers] = useState([]);
   const [votes, setVotes] = useState([]);
@@ -213,11 +254,13 @@ export default function App() {
     <div className="app">
       <header className="hero">
         <div>
+          {/*
           <div className="eyebrow">Interactive</div>
           <h1>Vote Explorer | Dáil Éireann</h1>
           <p>
             Take a look at how TDs voted with our interactive vote explorer.
           </p>
+          */}
         </div>
 
         <div className="controls controls--single">
