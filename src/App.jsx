@@ -157,17 +157,8 @@ export default function App() {
     const tallyYes = selectedVote.tallies?.["Tá"] ?? 0;
     const tallyNo = selectedVote.tallies?.["Níl"] ?? 0;
     const tallyAbstain = selectedVote.tallies?.["Staon"] ?? 0;
-    const total = tallyYes + tallyNo + tallyAbstain;
 
     return [
-      {
-        key: "All",
-        label: "All",
-        count: total,
-        active: voteFilter === null,
-        className: "vote-summary__item--all",
-        value: null,
-      },
       {
         key: "Tá",
         label: "Tá",
@@ -175,6 +166,7 @@ export default function App() {
         active: voteFilter === "Tá",
         className: "vote-summary__item--yes",
         value: "Tá",
+        showCount: true,
       },
       {
         key: "Níl",
@@ -183,6 +175,7 @@ export default function App() {
         active: voteFilter === "Níl",
         className: "vote-summary__item--no",
         value: "Níl",
+        showCount: true,
       },
       {
         key: "Staon",
@@ -191,6 +184,16 @@ export default function App() {
         active: voteFilter === "Staon",
         className: "vote-summary__item--abstain",
         value: "Staon",
+        showCount: true,
+      },
+      {
+        key: "Clear",
+        label: "All",
+        count: null,
+        active: voteFilter === null,
+        className: "vote-summary__item--all",
+        value: null,
+        showCount: false,
       },
     ];
   }, [selectedVote, voteFilter]);
