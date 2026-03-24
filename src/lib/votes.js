@@ -66,6 +66,6 @@ export function normaliseVotesDataset(votesJson) {
 export const voteColorMap = {
   Tá: "#2e8b57",
   Níl: "#c0392b",
-  Staon: "#8c8c8c",
+  Staon: "#84a1c4",
   Absent: "#d6d3d1",
 };

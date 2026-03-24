@@ -328,7 +328,7 @@ p {
 }
 
 .vote-summary__item--abstain .vote-summary__dot {
-    background: #8c8c8c;
+    background: #84a1c4;
 }
 
 /* Map */
@@ -658,10 +658,10 @@ p {
 .vote-banner--Staon {
     background: linear-gradient(
         180deg,
-        rgba(140, 140, 140, 0.24),
-        rgba(140, 140, 140, 0.18)
+        rgba(132, 161, 196, 0.24),
+        rgba(132, 161, 196, 0.18)
     );
-    color: #5c5c5c;
+    color: #84a1c4;
 }
 
 .vote-banner--Absent {
