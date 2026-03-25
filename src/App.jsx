@@ -35,13 +35,20 @@ function buildDebateUrl(date, section) {
   return `https://www.oireachtas.ie/en/debates/debate/dail/${date}/${sectionNumber}/`;
 }
 
+function getVoteOrderNumber(vote) {
+  const raw = vote.voteID || vote.id || "";
+  const match = String(raw).match(/(\d+)$/);
+  return match ? Number(match[1]) : -1;
+}
+
 function useIframeResize() {
   useEffect(() => {
     function sendHeight() {
-      const height = Math.max(
-        document.documentElement.scrollHeight,
-        document.body.scrollHeight,
-      );
+      const height =
+        Math.max(
+          document.documentElement.scrollHeight,
+          document.body.scrollHeight,
+        ) + 8;
 
       window.parent.postMessage(
         {
@@ -126,10 +133,12 @@ export default function App() {
         }
 
         const json = await res.json();
-        const normalised = normaliseVotesDataset(json);
+        const normalised = normaliseVotesDataset(json).sort(
+          (a, b) => getVoteOrderNumber(b) - getVoteOrderNumber(a),
+        );
 
         setVotes(normalised);
-        setSelectedVoteId((current) => current || normalised[0]?.id || "");
+        setSelectedVoteId(normalised[0]?.id || "");
       } catch (err) {
         console.error(err);
         setVotesError("Unable to load vote data.");
@@ -188,7 +197,7 @@ export default function App() {
       },
       {
         key: "Clear",
-        label: "All",
+        label: "Clear filter",
         count: null,
         active: voteFilter === null,
         className: "vote-summary__item--all",
@@ -339,14 +348,15 @@ export default function App() {
                     aria-pressed={item.active}
                     title={
                       item.value === null
-                        ? "Show all votes"
+                        ? "Clear vote filter"
                         : item.active
                           ? `Showing ${item.label}`
                           : `Focus ${item.label}`
                     }
                   >
                     <span className="vote-summary__dot" />
-                    {item.label} {item.count}
+                    {item.label}
+                    {item.showCount ? ` ${item.count}` : ""}
                   </button>
                 ))}
               </div>
