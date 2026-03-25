@@ -3,460 +3,11 @@
     "id": "vote_60",
     "tallies": {
       "staonVotes": {
+        "members": [],
         "tally": 0,
-        "showAs": "Staon",
-        "members": []
-      },
-      "nilVotes": {
-        "tally": 63,
-        "showAs": "Níl",
-        "members": [
-          {
-            "member": {
-              "showAs": "Ahern, Ciarán.",
-              "memberCode": "Ciarán-Ahern.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ciarán-Ahern.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Bacik, Ivana.",
-              "memberCode": "Ivana-Bacik.S.2007-07-23",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ivana-Bacik.S.2007-07-23"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Boyd Barrett, Richard.",
-              "memberCode": "Richard-Boyd-Barrett.D.2011-03-09",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Richard-Boyd-Barrett.D.2011-03-09"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Brady, John.",
-              "memberCode": "John-Brady.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/John-Brady.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Buckley, Pat.",
-              "memberCode": "Pat-Buckley.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pat-Buckley.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Byrne, Joanna.",
-              "memberCode": "Joanna-Byrne.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Joanna-Byrne.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Carthy, Matt.",
-              "memberCode": "Matt-Carthy.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Matt-Carthy.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Clarke, Sorca.",
-              "memberCode": "Sorca-Clarke.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Sorca-Clarke.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Collins, Michael.",
-              "memberCode": "Michael-Collins.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Michael-Collins.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Conway-Walsh, Rose.",
-              "memberCode": "Rose-Conway-Walsh.S.2016-04-25",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Rose-Conway-Walsh.S.2016-04-25"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Coppinger, Ruth.",
-              "memberCode": "Ruth-Coppinger.D.2014-05-23",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ruth-Coppinger.D.2014-05-23"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Cronin, Réada.",
-              "memberCode": "Réada-Cronin.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Réada-Cronin.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Cummins, Jen.",
-              "memberCode": "Jen-Cummins.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Jen-Cummins.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Daly, Pa.",
-              "memberCode": "Pa-Daly.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pa-Daly.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Devine, Máire.",
-              "memberCode": "Máire-Devine.S.2016-04-25",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Máire-Devine.S.2016-04-25"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Doherty, Pearse.",
-              "memberCode": "Pearse-Doherty.S.2007-07-23",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pearse-Doherty.S.2007-07-23"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Donnelly, Paul.",
-              "memberCode": "Paul-Donnelly.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Paul-Donnelly.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Farrelly, Aidan.",
-              "memberCode": "Aidan-Farrelly.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Aidan-Farrelly.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Farrell, Mairéad.",
-              "memberCode": "Mairéad-Farrell.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Mairéad-Farrell.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Gannon, Gary.",
-              "memberCode": "Gary-Gannon.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Gary-Gannon.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Gogarty, Paul Nicholas.",
-              "memberCode": "Paul-Nicholas-Gogarty.D.2002-06-06",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Paul-Nicholas-Gogarty.D.2002-06-06"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Gould, Thomas.",
-              "memberCode": "Thomas-Gould.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Thomas-Gould.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Graves, Ann.",
-              "memberCode": "Ann-Graves.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ann-Graves.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Guirke, Johnny.",
-              "memberCode": "Johnny-Guirke.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Johnny-Guirke.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Hayes, Eoin.",
-              "memberCode": "Eoin-Hayes.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Eoin-Hayes.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Hearne, Rory.",
-              "memberCode": "Rory-Hearne.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Rory-Hearne.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Kelly, Alan.",
-              "memberCode": "Alan-Kelly.S.2007-07-23",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Alan-Kelly.S.2007-07-23"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Kenny, Eoghan.",
-              "memberCode": "Eoghan-Kenny.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Eoghan-Kenny.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Kenny, Martin.",
-              "memberCode": "Martin-Kenny.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Martin-Kenny.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Kerrane, Claire.",
-              "memberCode": "Claire-Kerrane.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Claire-Kerrane.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Lawless, Paul.",
-              "memberCode": "Paul-Lawless.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Paul-Lawless.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Lawlor, George.",
-              "memberCode": "George-Lawlor.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/George-Lawlor.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Mac Lochlainn, Pádraig.",
-              "memberCode": "Pádraig-MacLochlainn.D.2011-03-09",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pádraig-MacLochlainn.D.2011-03-09"
-            }
-          },
-          {
-            "member": {
-              "showAs": "McDonald, Mary Lou.",
-              "memberCode": "Mary-Lou-McDonald.D.2011-03-09",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Mary-Lou-McDonald.D.2011-03-09"
-            }
-          },
-          {
-            "member": {
-              "showAs": "McGettigan, Donna.",
-              "memberCode": "Donna-McGettigan.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Donna-McGettigan.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "McGuinness, Conor D.",
-              "memberCode": "Conor-D-McGuinness.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Conor-D-McGuinness.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Mitchell, Denise.",
-              "memberCode": "Denise-Mitchell.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Denise-Mitchell.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Murphy, Paul.",
-              "memberCode": "Paul-Murphy.D.2014-10-10",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Paul-Murphy.D.2014-10-10"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Mythen, Johnny.",
-              "memberCode": "Johnny-Mythen.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Johnny-Mythen.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Nash, Ged.",
-              "memberCode": "Gerald-Nash.D.2011-03-09",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Gerald-Nash.D.2011-03-09"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Newsome Drennan, Natasha.",
-              "memberCode": "Natasha-Newsome-Drennan.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Natasha-Newsome-Drennan.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ní Raghallaigh, Shónagh.",
-              "memberCode": "Shónagh-Ní-Raghallaigh.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Shónagh-Ní-Raghallaigh.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "O'Callaghan, Cian.",
-              "memberCode": "Cian-O'Callaghan.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Cian-O'Callaghan.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "O'Donoghue, Robert.",
-              "memberCode": "Robert-O'Donoghue.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Robert-O'Donoghue.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "O'Flynn, Ken.",
-              "memberCode": "Ken-O'Flynn.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ken-O'Flynn.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "O'Gorman, Roderic.",
-              "memberCode": "Roderic-O'Gorman.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Roderic-O'Gorman.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "O'Hara, Louis.",
-              "memberCode": "Louis-O'Hara.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Louis-O'Hara.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "O'Reilly, Louise.",
-              "memberCode": "Louise-O'Reilly.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Louise-O'Reilly.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "O'Rourke, Darren.",
-              "memberCode": "Darren-O'Rourke.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Darren-O'Rourke.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ó Broin, Eoin.",
-              "memberCode": "Eoin-Ó-Broin.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Eoin-Ó-Broin.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ó Laoghaire, Donnchadh.",
-              "memberCode": "Donnchadh-Ó-Laoghaire.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Donnchadh-Ó-Laoghaire.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ó Snodaigh, Aengus.",
-              "memberCode": "Aengus-Ó-Snodaigh.D.2002-06-06",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Aengus-Ó-Snodaigh.D.2002-06-06"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ó Súilleabháin, Fionntán.",
-              "memberCode": "Fionntán-Ó-Súilleabháin.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Fionntán-Ó-Súilleabháin.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Quaide, Liam.",
-              "memberCode": "Liam-Quaide.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Liam-Quaide.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Quinlivan, Maurice.",
-              "memberCode": "Maurice-Quinlivan.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Maurice-Quinlivan.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Rice, Pádraig.",
-              "memberCode": "Pádraig-Rice.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pádraig-Rice.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Sherlock, Marie.",
-              "memberCode": "Marie-Sherlock.S.2020-03-30",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Marie-Sherlock.S.2020-03-30"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Smith, Duncan.",
-              "memberCode": "Duncan-Smith.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Duncan-Smith.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Stanley, Brian.",
-              "memberCode": "Brian-Stanley.D.2011-03-09",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Brian-Stanley.D.2011-03-09"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Tóibín, Peadar.",
-              "memberCode": "Peadar-Tóibín.D.2011-03-09",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Peadar-Tóibín.D.2011-03-09"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ward, Charles.",
-              "memberCode": "Charles-Ward.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Charles-Ward.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ward, Mark.",
-              "memberCode": "Mark-Ward.D.2019-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Mark-Ward.D.2019-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Whitmore, Jennifer.",
-              "memberCode": "Jennifer-Whitmore.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Jennifer-Whitmore.D.2020-02-08"
-            }
-          }
-        ]
+        "showAs": "Staon"
       },
       "taVotes": {
-        "tally": 85,
-        "showAs": "Tá",
         "members": [
           {
             "member": {
@@ -1053,7 +604,456 @@
               "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Barry-Ward.S.2020-03-30"
             }
           }
-        ]
+        ],
+        "tally": 85,
+        "showAs": "Tá"
+      },
+      "nilVotes": {
+        "members": [
+          {
+            "member": {
+              "showAs": "Ahern, Ciarán.",
+              "memberCode": "Ciarán-Ahern.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ciarán-Ahern.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Bacik, Ivana.",
+              "memberCode": "Ivana-Bacik.S.2007-07-23",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ivana-Bacik.S.2007-07-23"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Boyd Barrett, Richard.",
+              "memberCode": "Richard-Boyd-Barrett.D.2011-03-09",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Richard-Boyd-Barrett.D.2011-03-09"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Brady, John.",
+              "memberCode": "John-Brady.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/John-Brady.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Buckley, Pat.",
+              "memberCode": "Pat-Buckley.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pat-Buckley.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Byrne, Joanna.",
+              "memberCode": "Joanna-Byrne.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Joanna-Byrne.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Carthy, Matt.",
+              "memberCode": "Matt-Carthy.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Matt-Carthy.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Clarke, Sorca.",
+              "memberCode": "Sorca-Clarke.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Sorca-Clarke.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Collins, Michael.",
+              "memberCode": "Michael-Collins.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Michael-Collins.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Conway-Walsh, Rose.",
+              "memberCode": "Rose-Conway-Walsh.S.2016-04-25",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Rose-Conway-Walsh.S.2016-04-25"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Coppinger, Ruth.",
+              "memberCode": "Ruth-Coppinger.D.2014-05-23",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ruth-Coppinger.D.2014-05-23"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Cronin, Réada.",
+              "memberCode": "Réada-Cronin.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Réada-Cronin.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Cummins, Jen.",
+              "memberCode": "Jen-Cummins.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Jen-Cummins.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Daly, Pa.",
+              "memberCode": "Pa-Daly.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pa-Daly.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Devine, Máire.",
+              "memberCode": "Máire-Devine.S.2016-04-25",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Máire-Devine.S.2016-04-25"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Doherty, Pearse.",
+              "memberCode": "Pearse-Doherty.S.2007-07-23",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pearse-Doherty.S.2007-07-23"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Donnelly, Paul.",
+              "memberCode": "Paul-Donnelly.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Paul-Donnelly.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Farrelly, Aidan.",
+              "memberCode": "Aidan-Farrelly.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Aidan-Farrelly.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Farrell, Mairéad.",
+              "memberCode": "Mairéad-Farrell.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Mairéad-Farrell.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Gannon, Gary.",
+              "memberCode": "Gary-Gannon.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Gary-Gannon.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Gogarty, Paul Nicholas.",
+              "memberCode": "Paul-Nicholas-Gogarty.D.2002-06-06",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Paul-Nicholas-Gogarty.D.2002-06-06"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Gould, Thomas.",
+              "memberCode": "Thomas-Gould.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Thomas-Gould.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Graves, Ann.",
+              "memberCode": "Ann-Graves.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ann-Graves.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Guirke, Johnny.",
+              "memberCode": "Johnny-Guirke.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Johnny-Guirke.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Hayes, Eoin.",
+              "memberCode": "Eoin-Hayes.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Eoin-Hayes.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Hearne, Rory.",
+              "memberCode": "Rory-Hearne.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Rory-Hearne.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Kelly, Alan.",
+              "memberCode": "Alan-Kelly.S.2007-07-23",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Alan-Kelly.S.2007-07-23"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Kenny, Eoghan.",
+              "memberCode": "Eoghan-Kenny.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Eoghan-Kenny.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Kenny, Martin.",
+              "memberCode": "Martin-Kenny.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Martin-Kenny.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Kerrane, Claire.",
+              "memberCode": "Claire-Kerrane.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Claire-Kerrane.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Lawless, Paul.",
+              "memberCode": "Paul-Lawless.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Paul-Lawless.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Lawlor, George.",
+              "memberCode": "George-Lawlor.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/George-Lawlor.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Mac Lochlainn, Pádraig.",
+              "memberCode": "Pádraig-MacLochlainn.D.2011-03-09",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pádraig-MacLochlainn.D.2011-03-09"
+            }
+          },
+          {
+            "member": {
+              "showAs": "McDonald, Mary Lou.",
+              "memberCode": "Mary-Lou-McDonald.D.2011-03-09",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Mary-Lou-McDonald.D.2011-03-09"
+            }
+          },
+          {
+            "member": {
+              "showAs": "McGettigan, Donna.",
+              "memberCode": "Donna-McGettigan.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Donna-McGettigan.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "McGuinness, Conor D.",
+              "memberCode": "Conor-D-McGuinness.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Conor-D-McGuinness.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Mitchell, Denise.",
+              "memberCode": "Denise-Mitchell.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Denise-Mitchell.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Murphy, Paul.",
+              "memberCode": "Paul-Murphy.D.2014-10-10",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Paul-Murphy.D.2014-10-10"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Mythen, Johnny.",
+              "memberCode": "Johnny-Mythen.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Johnny-Mythen.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Nash, Ged.",
+              "memberCode": "Gerald-Nash.D.2011-03-09",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Gerald-Nash.D.2011-03-09"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Newsome Drennan, Natasha.",
+              "memberCode": "Natasha-Newsome-Drennan.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Natasha-Newsome-Drennan.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ní Raghallaigh, Shónagh.",
+              "memberCode": "Shónagh-Ní-Raghallaigh.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Shónagh-Ní-Raghallaigh.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "O'Callaghan, Cian.",
+              "memberCode": "Cian-O'Callaghan.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Cian-O'Callaghan.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "O'Donoghue, Robert.",
+              "memberCode": "Robert-O'Donoghue.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Robert-O'Donoghue.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "O'Flynn, Ken.",
+              "memberCode": "Ken-O'Flynn.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ken-O'Flynn.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "O'Gorman, Roderic.",
+              "memberCode": "Roderic-O'Gorman.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Roderic-O'Gorman.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "O'Hara, Louis.",
+              "memberCode": "Louis-O'Hara.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Louis-O'Hara.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "O'Reilly, Louise.",
+              "memberCode": "Louise-O'Reilly.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Louise-O'Reilly.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "O'Rourke, Darren.",
+              "memberCode": "Darren-O'Rourke.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Darren-O'Rourke.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ó Broin, Eoin.",
+              "memberCode": "Eoin-Ó-Broin.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Eoin-Ó-Broin.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ó Laoghaire, Donnchadh.",
+              "memberCode": "Donnchadh-Ó-Laoghaire.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Donnchadh-Ó-Laoghaire.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ó Snodaigh, Aengus.",
+              "memberCode": "Aengus-Ó-Snodaigh.D.2002-06-06",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Aengus-Ó-Snodaigh.D.2002-06-06"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ó Súilleabháin, Fionntán.",
+              "memberCode": "Fionntán-Ó-Súilleabháin.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Fionntán-Ó-Súilleabháin.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Quaide, Liam.",
+              "memberCode": "Liam-Quaide.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Liam-Quaide.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Quinlivan, Maurice.",
+              "memberCode": "Maurice-Quinlivan.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Maurice-Quinlivan.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Rice, Pádraig.",
+              "memberCode": "Pádraig-Rice.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pádraig-Rice.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Sherlock, Marie.",
+              "memberCode": "Marie-Sherlock.S.2020-03-30",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Marie-Sherlock.S.2020-03-30"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Smith, Duncan.",
+              "memberCode": "Duncan-Smith.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Duncan-Smith.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Stanley, Brian.",
+              "memberCode": "Brian-Stanley.D.2011-03-09",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Brian-Stanley.D.2011-03-09"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Tóibín, Peadar.",
+              "memberCode": "Peadar-Tóibín.D.2011-03-09",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Peadar-Tóibín.D.2011-03-09"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ward, Charles.",
+              "memberCode": "Charles-Ward.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Charles-Ward.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ward, Mark.",
+              "memberCode": "Mark-Ward.D.2019-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Mark-Ward.D.2019-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Whitmore, Jennifer.",
+              "memberCode": "Jennifer-Whitmore.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Jennifer-Whitmore.D.2020-02-08"
+            }
+          }
+        ],
+        "tally": 63,
+        "showAs": "Níl"
       }
     },
     "house": "Dáil Éireann",
@@ -1070,481 +1070,11 @@
     "id": "vote_61",
     "tallies": {
       "staonVotes": {
+        "members": [],
         "tally": 0,
-        "showAs": "Staon",
-        "members": []
-      },
-      "nilVotes": {
-        "tally": 66,
-        "showAs": "Níl",
-        "members": [
-          {
-            "member": {
-              "showAs": "Ahern, Ciarán.",
-              "memberCode": "Ciarán-Ahern.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ciarán-Ahern.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Bacik, Ivana.",
-              "memberCode": "Ivana-Bacik.S.2007-07-23",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ivana-Bacik.S.2007-07-23"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Bennett, Cathy.",
-              "memberCode": "Cathy-Bennett.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Cathy-Bennett.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Boyd Barrett, Richard.",
-              "memberCode": "Richard-Boyd-Barrett.D.2011-03-09",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Richard-Boyd-Barrett.D.2011-03-09"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Brady, John.",
-              "memberCode": "John-Brady.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/John-Brady.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Buckley, Pat.",
-              "memberCode": "Pat-Buckley.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pat-Buckley.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Byrne, Joanna.",
-              "memberCode": "Joanna-Byrne.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Joanna-Byrne.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Carthy, Matt.",
-              "memberCode": "Matt-Carthy.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Matt-Carthy.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Clarke, Sorca.",
-              "memberCode": "Sorca-Clarke.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Sorca-Clarke.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Collins, Michael.",
-              "memberCode": "Michael-Collins.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Michael-Collins.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Conway-Walsh, Rose.",
-              "memberCode": "Rose-Conway-Walsh.S.2016-04-25",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Rose-Conway-Walsh.S.2016-04-25"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Coppinger, Ruth.",
-              "memberCode": "Ruth-Coppinger.D.2014-05-23",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ruth-Coppinger.D.2014-05-23"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Cronin, Réada.",
-              "memberCode": "Réada-Cronin.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Réada-Cronin.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Cullinane, David.",
-              "memberCode": "David-Cullinane.S.2011-05-25",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/David-Cullinane.S.2011-05-25"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Cummins, Jen.",
-              "memberCode": "Jen-Cummins.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Jen-Cummins.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Daly, Pa.",
-              "memberCode": "Pa-Daly.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pa-Daly.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Devine, Máire.",
-              "memberCode": "Máire-Devine.S.2016-04-25",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Máire-Devine.S.2016-04-25"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Doherty, Pearse.",
-              "memberCode": "Pearse-Doherty.S.2007-07-23",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pearse-Doherty.S.2007-07-23"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Donnelly, Paul.",
-              "memberCode": "Paul-Donnelly.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Paul-Donnelly.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Farrelly, Aidan.",
-              "memberCode": "Aidan-Farrelly.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Aidan-Farrelly.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Farrell, Mairéad.",
-              "memberCode": "Mairéad-Farrell.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Mairéad-Farrell.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Gannon, Gary.",
-              "memberCode": "Gary-Gannon.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Gary-Gannon.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Gogarty, Paul Nicholas.",
-              "memberCode": "Paul-Nicholas-Gogarty.D.2002-06-06",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Paul-Nicholas-Gogarty.D.2002-06-06"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Gould, Thomas.",
-              "memberCode": "Thomas-Gould.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Thomas-Gould.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Graves, Ann.",
-              "memberCode": "Ann-Graves.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ann-Graves.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Guirke, Johnny.",
-              "memberCode": "Johnny-Guirke.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Johnny-Guirke.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Hayes, Eoin.",
-              "memberCode": "Eoin-Hayes.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Eoin-Hayes.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Hearne, Rory.",
-              "memberCode": "Rory-Hearne.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Rory-Hearne.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Kelly, Alan.",
-              "memberCode": "Alan-Kelly.S.2007-07-23",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Alan-Kelly.S.2007-07-23"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Kenny, Eoghan.",
-              "memberCode": "Eoghan-Kenny.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Eoghan-Kenny.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Kenny, Martin.",
-              "memberCode": "Martin-Kenny.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Martin-Kenny.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Kerrane, Claire.",
-              "memberCode": "Claire-Kerrane.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Claire-Kerrane.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Lawless, Paul.",
-              "memberCode": "Paul-Lawless.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Paul-Lawless.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Lawlor, George.",
-              "memberCode": "George-Lawlor.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/George-Lawlor.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Mac Lochlainn, Pádraig.",
-              "memberCode": "Pádraig-MacLochlainn.D.2011-03-09",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pádraig-MacLochlainn.D.2011-03-09"
-            }
-          },
-          {
-            "member": {
-              "showAs": "McGettigan, Donna.",
-              "memberCode": "Donna-McGettigan.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Donna-McGettigan.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "McGuinness, Conor D.",
-              "memberCode": "Conor-D-McGuinness.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Conor-D-McGuinness.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Mitchell, Denise.",
-              "memberCode": "Denise-Mitchell.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Denise-Mitchell.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Mythen, Johnny.",
-              "memberCode": "Johnny-Mythen.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Johnny-Mythen.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Nash, Ged.",
-              "memberCode": "Gerald-Nash.D.2011-03-09",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Gerald-Nash.D.2011-03-09"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Newsome Drennan, Natasha.",
-              "memberCode": "Natasha-Newsome-Drennan.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Natasha-Newsome-Drennan.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ní Raghallaigh, Shónagh.",
-              "memberCode": "Shónagh-Ní-Raghallaigh.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Shónagh-Ní-Raghallaigh.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Nolan, Carol.",
-              "memberCode": "Carol-Nolan.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Carol-Nolan.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "O'Callaghan, Cian.",
-              "memberCode": "Cian-O'Callaghan.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Cian-O'Callaghan.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "O'Donoghue, Robert.",
-              "memberCode": "Robert-O'Donoghue.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Robert-O'Donoghue.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "O'Flynn, Ken.",
-              "memberCode": "Ken-O'Flynn.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ken-O'Flynn.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "O'Gorman, Roderic.",
-              "memberCode": "Roderic-O'Gorman.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Roderic-O'Gorman.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "O'Hara, Louis.",
-              "memberCode": "Louis-O'Hara.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Louis-O'Hara.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "O'Reilly, Louise.",
-              "memberCode": "Louise-O'Reilly.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Louise-O'Reilly.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "O'Rourke, Darren.",
-              "memberCode": "Darren-O'Rourke.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Darren-O'Rourke.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ó Broin, Eoin.",
-              "memberCode": "Eoin-Ó-Broin.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Eoin-Ó-Broin.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ó Laoghaire, Donnchadh.",
-              "memberCode": "Donnchadh-Ó-Laoghaire.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Donnchadh-Ó-Laoghaire.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ó Murchú, Ruairí.",
-              "memberCode": "Ruairí-Ó-Murchú.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ruairí-Ó-Murchú.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ó Snodaigh, Aengus.",
-              "memberCode": "Aengus-Ó-Snodaigh.D.2002-06-06",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Aengus-Ó-Snodaigh.D.2002-06-06"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ó Súilleabháin, Fionntán.",
-              "memberCode": "Fionntán-Ó-Súilleabháin.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Fionntán-Ó-Súilleabháin.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Quaide, Liam.",
-              "memberCode": "Liam-Quaide.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Liam-Quaide.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Quinlivan, Maurice.",
-              "memberCode": "Maurice-Quinlivan.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Maurice-Quinlivan.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Rice, Pádraig.",
-              "memberCode": "Pádraig-Rice.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pádraig-Rice.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Sheehan, Conor.",
-              "memberCode": "Conor-Sheehan.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Conor-Sheehan.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Sherlock, Marie.",
-              "memberCode": "Marie-Sherlock.S.2020-03-30",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Marie-Sherlock.S.2020-03-30"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Smith, Duncan.",
-              "memberCode": "Duncan-Smith.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Duncan-Smith.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Stanley, Brian.",
-              "memberCode": "Brian-Stanley.D.2011-03-09",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Brian-Stanley.D.2011-03-09"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Tóibín, Peadar.",
-              "memberCode": "Peadar-Tóibín.D.2011-03-09",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Peadar-Tóibín.D.2011-03-09"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ward, Charles.",
-              "memberCode": "Charles-Ward.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Charles-Ward.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ward, Mark.",
-              "memberCode": "Mark-Ward.D.2019-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Mark-Ward.D.2019-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Whitmore, Jennifer.",
-              "memberCode": "Jennifer-Whitmore.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Jennifer-Whitmore.D.2020-02-08"
-            }
-          }
-        ]
+        "showAs": "Staon"
       },
       "taVotes": {
-        "tally": 84,
-        "showAs": "Tá",
         "members": [
           {
             "member": {
@@ -2134,7 +1664,477 @@
               "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Barry-Ward.S.2020-03-30"
             }
           }
-        ]
+        ],
+        "tally": 84,
+        "showAs": "Tá"
+      },
+      "nilVotes": {
+        "members": [
+          {
+            "member": {
+              "showAs": "Ahern, Ciarán.",
+              "memberCode": "Ciarán-Ahern.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ciarán-Ahern.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Bacik, Ivana.",
+              "memberCode": "Ivana-Bacik.S.2007-07-23",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ivana-Bacik.S.2007-07-23"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Bennett, Cathy.",
+              "memberCode": "Cathy-Bennett.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Cathy-Bennett.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Boyd Barrett, Richard.",
+              "memberCode": "Richard-Boyd-Barrett.D.2011-03-09",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Richard-Boyd-Barrett.D.2011-03-09"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Brady, John.",
+              "memberCode": "John-Brady.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/John-Brady.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Buckley, Pat.",
+              "memberCode": "Pat-Buckley.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pat-Buckley.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Byrne, Joanna.",
+              "memberCode": "Joanna-Byrne.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Joanna-Byrne.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Carthy, Matt.",
+              "memberCode": "Matt-Carthy.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Matt-Carthy.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Clarke, Sorca.",
+              "memberCode": "Sorca-Clarke.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Sorca-Clarke.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Collins, Michael.",
+              "memberCode": "Michael-Collins.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Michael-Collins.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Conway-Walsh, Rose.",
+              "memberCode": "Rose-Conway-Walsh.S.2016-04-25",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Rose-Conway-Walsh.S.2016-04-25"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Coppinger, Ruth.",
+              "memberCode": "Ruth-Coppinger.D.2014-05-23",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ruth-Coppinger.D.2014-05-23"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Cronin, Réada.",
+              "memberCode": "Réada-Cronin.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Réada-Cronin.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Cullinane, David.",
+              "memberCode": "David-Cullinane.S.2011-05-25",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/David-Cullinane.S.2011-05-25"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Cummins, Jen.",
+              "memberCode": "Jen-Cummins.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Jen-Cummins.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Daly, Pa.",
+              "memberCode": "Pa-Daly.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pa-Daly.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Devine, Máire.",
+              "memberCode": "Máire-Devine.S.2016-04-25",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Máire-Devine.S.2016-04-25"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Doherty, Pearse.",
+              "memberCode": "Pearse-Doherty.S.2007-07-23",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pearse-Doherty.S.2007-07-23"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Donnelly, Paul.",
+              "memberCode": "Paul-Donnelly.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Paul-Donnelly.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Farrelly, Aidan.",
+              "memberCode": "Aidan-Farrelly.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Aidan-Farrelly.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Farrell, Mairéad.",
+              "memberCode": "Mairéad-Farrell.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Mairéad-Farrell.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Gannon, Gary.",
+              "memberCode": "Gary-Gannon.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Gary-Gannon.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Gogarty, Paul Nicholas.",
+              "memberCode": "Paul-Nicholas-Gogarty.D.2002-06-06",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Paul-Nicholas-Gogarty.D.2002-06-06"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Gould, Thomas.",
+              "memberCode": "Thomas-Gould.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Thomas-Gould.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Graves, Ann.",
+              "memberCode": "Ann-Graves.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ann-Graves.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Guirke, Johnny.",
+              "memberCode": "Johnny-Guirke.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Johnny-Guirke.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Hayes, Eoin.",
+              "memberCode": "Eoin-Hayes.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Eoin-Hayes.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Hearne, Rory.",
+              "memberCode": "Rory-Hearne.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Rory-Hearne.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Kelly, Alan.",
+              "memberCode": "Alan-Kelly.S.2007-07-23",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Alan-Kelly.S.2007-07-23"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Kenny, Eoghan.",
+              "memberCode": "Eoghan-Kenny.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Eoghan-Kenny.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Kenny, Martin.",
+              "memberCode": "Martin-Kenny.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Martin-Kenny.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Kerrane, Claire.",
+              "memberCode": "Claire-Kerrane.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Claire-Kerrane.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Lawless, Paul.",
+              "memberCode": "Paul-Lawless.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Paul-Lawless.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Lawlor, George.",
+              "memberCode": "George-Lawlor.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/George-Lawlor.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Mac Lochlainn, Pádraig.",
+              "memberCode": "Pádraig-MacLochlainn.D.2011-03-09",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pádraig-MacLochlainn.D.2011-03-09"
+            }
+          },
+          {
+            "member": {
+              "showAs": "McGettigan, Donna.",
+              "memberCode": "Donna-McGettigan.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Donna-McGettigan.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "McGuinness, Conor D.",
+              "memberCode": "Conor-D-McGuinness.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Conor-D-McGuinness.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Mitchell, Denise.",
+              "memberCode": "Denise-Mitchell.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Denise-Mitchell.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Mythen, Johnny.",
+              "memberCode": "Johnny-Mythen.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Johnny-Mythen.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Nash, Ged.",
+              "memberCode": "Gerald-Nash.D.2011-03-09",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Gerald-Nash.D.2011-03-09"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Newsome Drennan, Natasha.",
+              "memberCode": "Natasha-Newsome-Drennan.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Natasha-Newsome-Drennan.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ní Raghallaigh, Shónagh.",
+              "memberCode": "Shónagh-Ní-Raghallaigh.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Shónagh-Ní-Raghallaigh.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Nolan, Carol.",
+              "memberCode": "Carol-Nolan.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Carol-Nolan.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "O'Callaghan, Cian.",
+              "memberCode": "Cian-O'Callaghan.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Cian-O'Callaghan.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "O'Donoghue, Robert.",
+              "memberCode": "Robert-O'Donoghue.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Robert-O'Donoghue.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "O'Flynn, Ken.",
+              "memberCode": "Ken-O'Flynn.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ken-O'Flynn.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "O'Gorman, Roderic.",
+              "memberCode": "Roderic-O'Gorman.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Roderic-O'Gorman.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "O'Hara, Louis.",
+              "memberCode": "Louis-O'Hara.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Louis-O'Hara.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "O'Reilly, Louise.",
+              "memberCode": "Louise-O'Reilly.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Louise-O'Reilly.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "O'Rourke, Darren.",
+              "memberCode": "Darren-O'Rourke.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Darren-O'Rourke.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ó Broin, Eoin.",
+              "memberCode": "Eoin-Ó-Broin.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Eoin-Ó-Broin.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ó Laoghaire, Donnchadh.",
+              "memberCode": "Donnchadh-Ó-Laoghaire.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Donnchadh-Ó-Laoghaire.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ó Murchú, Ruairí.",
+              "memberCode": "Ruairí-Ó-Murchú.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ruairí-Ó-Murchú.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ó Snodaigh, Aengus.",
+              "memberCode": "Aengus-Ó-Snodaigh.D.2002-06-06",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Aengus-Ó-Snodaigh.D.2002-06-06"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ó Súilleabháin, Fionntán.",
+              "memberCode": "Fionntán-Ó-Súilleabháin.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Fionntán-Ó-Súilleabháin.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Quaide, Liam.",
+              "memberCode": "Liam-Quaide.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Liam-Quaide.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Quinlivan, Maurice.",
+              "memberCode": "Maurice-Quinlivan.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Maurice-Quinlivan.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Rice, Pádraig.",
+              "memberCode": "Pádraig-Rice.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pádraig-Rice.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Sheehan, Conor.",
+              "memberCode": "Conor-Sheehan.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Conor-Sheehan.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Sherlock, Marie.",
+              "memberCode": "Marie-Sherlock.S.2020-03-30",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Marie-Sherlock.S.2020-03-30"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Smith, Duncan.",
+              "memberCode": "Duncan-Smith.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Duncan-Smith.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Stanley, Brian.",
+              "memberCode": "Brian-Stanley.D.2011-03-09",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Brian-Stanley.D.2011-03-09"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Tóibín, Peadar.",
+              "memberCode": "Peadar-Tóibín.D.2011-03-09",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Peadar-Tóibín.D.2011-03-09"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ward, Charles.",
+              "memberCode": "Charles-Ward.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Charles-Ward.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ward, Mark.",
+              "memberCode": "Mark-Ward.D.2019-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Mark-Ward.D.2019-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Whitmore, Jennifer.",
+              "memberCode": "Jennifer-Whitmore.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Jennifer-Whitmore.D.2020-02-08"
+            }
+          }
+        ],
+        "tally": 66,
+        "showAs": "Níl"
       }
     },
     "house": "Dáil Éireann",
@@ -2151,13 +2151,500 @@
     "id": "vote_62",
     "tallies": {
       "staonVotes": {
+        "members": [],
         "tally": 0,
-        "showAs": "Staon",
-        "members": []
+        "showAs": "Staon"
+      },
+      "taVotes": {
+        "members": [
+          {
+            "member": {
+              "showAs": "Ahern, Ciarán.",
+              "memberCode": "Ciarán-Ahern.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ciarán-Ahern.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Bacik, Ivana.",
+              "memberCode": "Ivana-Bacik.S.2007-07-23",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ivana-Bacik.S.2007-07-23"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Bennett, Cathy.",
+              "memberCode": "Cathy-Bennett.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Cathy-Bennett.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Boyd Barrett, Richard.",
+              "memberCode": "Richard-Boyd-Barrett.D.2011-03-09",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Richard-Boyd-Barrett.D.2011-03-09"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Brady, John.",
+              "memberCode": "John-Brady.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/John-Brady.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Buckley, Pat.",
+              "memberCode": "Pat-Buckley.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pat-Buckley.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Byrne, Joanna.",
+              "memberCode": "Joanna-Byrne.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Joanna-Byrne.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Carthy, Matt.",
+              "memberCode": "Matt-Carthy.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Matt-Carthy.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Clarke, Sorca.",
+              "memberCode": "Sorca-Clarke.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Sorca-Clarke.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Collins, Michael.",
+              "memberCode": "Michael-Collins.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Michael-Collins.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Conway-Walsh, Rose.",
+              "memberCode": "Rose-Conway-Walsh.S.2016-04-25",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Rose-Conway-Walsh.S.2016-04-25"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Coppinger, Ruth.",
+              "memberCode": "Ruth-Coppinger.D.2014-05-23",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ruth-Coppinger.D.2014-05-23"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Cronin, Réada.",
+              "memberCode": "Réada-Cronin.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Réada-Cronin.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Cullinane, David.",
+              "memberCode": "David-Cullinane.S.2011-05-25",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/David-Cullinane.S.2011-05-25"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Cummins, Jen.",
+              "memberCode": "Jen-Cummins.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Jen-Cummins.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Daly, Pa.",
+              "memberCode": "Pa-Daly.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pa-Daly.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Devine, Máire.",
+              "memberCode": "Máire-Devine.S.2016-04-25",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Máire-Devine.S.2016-04-25"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Doherty, Pearse.",
+              "memberCode": "Pearse-Doherty.S.2007-07-23",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pearse-Doherty.S.2007-07-23"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Donnelly, Paul.",
+              "memberCode": "Paul-Donnelly.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Paul-Donnelly.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Farrelly, Aidan.",
+              "memberCode": "Aidan-Farrelly.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Aidan-Farrelly.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Farrell, Mairéad.",
+              "memberCode": "Mairéad-Farrell.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Mairéad-Farrell.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Fitzmaurice, Michael.",
+              "memberCode": "Michael-Fitzmaurice.D.2014-10-10",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Michael-Fitzmaurice.D.2014-10-10"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Gannon, Gary.",
+              "memberCode": "Gary-Gannon.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Gary-Gannon.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Gibney, Sinéad.",
+              "memberCode": "Sinéad-Gibney.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Sinéad-Gibney.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Gogarty, Paul Nicholas.",
+              "memberCode": "Paul-Nicholas-Gogarty.D.2002-06-06",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Paul-Nicholas-Gogarty.D.2002-06-06"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Gould, Thomas.",
+              "memberCode": "Thomas-Gould.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Thomas-Gould.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Graves, Ann.",
+              "memberCode": "Ann-Graves.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ann-Graves.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Guirke, Johnny.",
+              "memberCode": "Johnny-Guirke.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Johnny-Guirke.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Hayes, Eoin.",
+              "memberCode": "Eoin-Hayes.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Eoin-Hayes.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Hearne, Rory.",
+              "memberCode": "Rory-Hearne.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Rory-Hearne.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Kelly, Alan.",
+              "memberCode": "Alan-Kelly.S.2007-07-23",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Alan-Kelly.S.2007-07-23"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Kenny, Eoghan.",
+              "memberCode": "Eoghan-Kenny.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Eoghan-Kenny.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Kenny, Martin.",
+              "memberCode": "Martin-Kenny.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Martin-Kenny.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Kerrane, Claire.",
+              "memberCode": "Claire-Kerrane.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Claire-Kerrane.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Lawless, Paul.",
+              "memberCode": "Paul-Lawless.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Paul-Lawless.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Lawlor, George.",
+              "memberCode": "George-Lawlor.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/George-Lawlor.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Mac Lochlainn, Pádraig.",
+              "memberCode": "Pádraig-MacLochlainn.D.2011-03-09",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pádraig-MacLochlainn.D.2011-03-09"
+            }
+          },
+          {
+            "member": {
+              "showAs": "McDonald, Mary Lou.",
+              "memberCode": "Mary-Lou-McDonald.D.2011-03-09",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Mary-Lou-McDonald.D.2011-03-09"
+            }
+          },
+          {
+            "member": {
+              "showAs": "McGettigan, Donna.",
+              "memberCode": "Donna-McGettigan.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Donna-McGettigan.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "McGuinness, Conor D.",
+              "memberCode": "Conor-D-McGuinness.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Conor-D-McGuinness.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Mitchell, Denise.",
+              "memberCode": "Denise-Mitchell.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Denise-Mitchell.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Mythen, Johnny.",
+              "memberCode": "Johnny-Mythen.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Johnny-Mythen.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Nash, Ged.",
+              "memberCode": "Gerald-Nash.D.2011-03-09",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Gerald-Nash.D.2011-03-09"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Newsome Drennan, Natasha.",
+              "memberCode": "Natasha-Newsome-Drennan.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Natasha-Newsome-Drennan.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ní Raghallaigh, Shónagh.",
+              "memberCode": "Shónagh-Ní-Raghallaigh.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Shónagh-Ní-Raghallaigh.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Nolan, Carol.",
+              "memberCode": "Carol-Nolan.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Carol-Nolan.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "O'Callaghan, Cian.",
+              "memberCode": "Cian-O'Callaghan.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Cian-O'Callaghan.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "O'Donoghue, Robert.",
+              "memberCode": "Robert-O'Donoghue.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Robert-O'Donoghue.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "O'Flynn, Ken.",
+              "memberCode": "Ken-O'Flynn.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ken-O'Flynn.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "O'Gorman, Roderic.",
+              "memberCode": "Roderic-O'Gorman.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Roderic-O'Gorman.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "O'Hara, Louis.",
+              "memberCode": "Louis-O'Hara.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Louis-O'Hara.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "O'Reilly, Louise.",
+              "memberCode": "Louise-O'Reilly.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Louise-O'Reilly.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "O'Rourke, Darren.",
+              "memberCode": "Darren-O'Rourke.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Darren-O'Rourke.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ó Broin, Eoin.",
+              "memberCode": "Eoin-Ó-Broin.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Eoin-Ó-Broin.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ó Laoghaire, Donnchadh.",
+              "memberCode": "Donnchadh-Ó-Laoghaire.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Donnchadh-Ó-Laoghaire.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ó Murchú, Ruairí.",
+              "memberCode": "Ruairí-Ó-Murchú.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ruairí-Ó-Murchú.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ó Snodaigh, Aengus.",
+              "memberCode": "Aengus-Ó-Snodaigh.D.2002-06-06",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Aengus-Ó-Snodaigh.D.2002-06-06"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ó Súilleabháin, Fionntán.",
+              "memberCode": "Fionntán-Ó-Súilleabháin.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Fionntán-Ó-Súilleabháin.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Quaide, Liam.",
+              "memberCode": "Liam-Quaide.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Liam-Quaide.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Quinlivan, Maurice.",
+              "memberCode": "Maurice-Quinlivan.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Maurice-Quinlivan.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Rice, Pádraig.",
+              "memberCode": "Pádraig-Rice.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pádraig-Rice.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Sheehan, Conor.",
+              "memberCode": "Conor-Sheehan.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Conor-Sheehan.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Sherlock, Marie.",
+              "memberCode": "Marie-Sherlock.S.2020-03-30",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Marie-Sherlock.S.2020-03-30"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Smith, Duncan.",
+              "memberCode": "Duncan-Smith.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Duncan-Smith.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Stanley, Brian.",
+              "memberCode": "Brian-Stanley.D.2011-03-09",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Brian-Stanley.D.2011-03-09"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Tóibín, Peadar.",
+              "memberCode": "Peadar-Tóibín.D.2011-03-09",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Peadar-Tóibín.D.2011-03-09"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ward, Charles.",
+              "memberCode": "Charles-Ward.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Charles-Ward.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ward, Mark.",
+              "memberCode": "Mark-Ward.D.2019-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Mark-Ward.D.2019-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Whitmore, Jennifer.",
+              "memberCode": "Jennifer-Whitmore.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Jennifer-Whitmore.D.2020-02-08"
+            }
+          }
+        ],
+        "tally": 69,
+        "showAs": "Tá"
       },
       "nilVotes": {
-        "tally": 88,
-        "showAs": "Níl",
         "members": [
           {
             "member": {
@@ -2775,496 +3262,9 @@
               "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Barry-Ward.S.2020-03-30"
             }
           }
-        ]
-      },
-      "taVotes": {
-        "tally": 69,
-        "showAs": "Tá",
-        "members": [
-          {
-            "member": {
-              "showAs": "Ahern, Ciarán.",
-              "memberCode": "Ciarán-Ahern.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ciarán-Ahern.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Bacik, Ivana.",
-              "memberCode": "Ivana-Bacik.S.2007-07-23",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ivana-Bacik.S.2007-07-23"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Bennett, Cathy.",
-              "memberCode": "Cathy-Bennett.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Cathy-Bennett.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Boyd Barrett, Richard.",
-              "memberCode": "Richard-Boyd-Barrett.D.2011-03-09",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Richard-Boyd-Barrett.D.2011-03-09"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Brady, John.",
-              "memberCode": "John-Brady.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/John-Brady.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Buckley, Pat.",
-              "memberCode": "Pat-Buckley.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pat-Buckley.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Byrne, Joanna.",
-              "memberCode": "Joanna-Byrne.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Joanna-Byrne.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Carthy, Matt.",
-              "memberCode": "Matt-Carthy.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Matt-Carthy.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Clarke, Sorca.",
-              "memberCode": "Sorca-Clarke.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Sorca-Clarke.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Collins, Michael.",
-              "memberCode": "Michael-Collins.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Michael-Collins.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Conway-Walsh, Rose.",
-              "memberCode": "Rose-Conway-Walsh.S.2016-04-25",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Rose-Conway-Walsh.S.2016-04-25"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Coppinger, Ruth.",
-              "memberCode": "Ruth-Coppinger.D.2014-05-23",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ruth-Coppinger.D.2014-05-23"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Cronin, Réada.",
-              "memberCode": "Réada-Cronin.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Réada-Cronin.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Cullinane, David.",
-              "memberCode": "David-Cullinane.S.2011-05-25",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/David-Cullinane.S.2011-05-25"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Cummins, Jen.",
-              "memberCode": "Jen-Cummins.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Jen-Cummins.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Daly, Pa.",
-              "memberCode": "Pa-Daly.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pa-Daly.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Devine, Máire.",
-              "memberCode": "Máire-Devine.S.2016-04-25",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Máire-Devine.S.2016-04-25"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Doherty, Pearse.",
-              "memberCode": "Pearse-Doherty.S.2007-07-23",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pearse-Doherty.S.2007-07-23"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Donnelly, Paul.",
-              "memberCode": "Paul-Donnelly.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Paul-Donnelly.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Farrelly, Aidan.",
-              "memberCode": "Aidan-Farrelly.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Aidan-Farrelly.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Farrell, Mairéad.",
-              "memberCode": "Mairéad-Farrell.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Mairéad-Farrell.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Fitzmaurice, Michael.",
-              "memberCode": "Michael-Fitzmaurice.D.2014-10-10",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Michael-Fitzmaurice.D.2014-10-10"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Gannon, Gary.",
-              "memberCode": "Gary-Gannon.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Gary-Gannon.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Gibney, Sinéad.",
-              "memberCode": "Sinéad-Gibney.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Sinéad-Gibney.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Gogarty, Paul Nicholas.",
-              "memberCode": "Paul-Nicholas-Gogarty.D.2002-06-06",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Paul-Nicholas-Gogarty.D.2002-06-06"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Gould, Thomas.",
-              "memberCode": "Thomas-Gould.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Thomas-Gould.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Graves, Ann.",
-              "memberCode": "Ann-Graves.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ann-Graves.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Guirke, Johnny.",
-              "memberCode": "Johnny-Guirke.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Johnny-Guirke.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Hayes, Eoin.",
-              "memberCode": "Eoin-Hayes.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Eoin-Hayes.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Hearne, Rory.",
-              "memberCode": "Rory-Hearne.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Rory-Hearne.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Kelly, Alan.",
-              "memberCode": "Alan-Kelly.S.2007-07-23",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Alan-Kelly.S.2007-07-23"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Kenny, Eoghan.",
-              "memberCode": "Eoghan-Kenny.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Eoghan-Kenny.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Kenny, Martin.",
-              "memberCode": "Martin-Kenny.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Martin-Kenny.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Kerrane, Claire.",
-              "memberCode": "Claire-Kerrane.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Claire-Kerrane.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Lawless, Paul.",
-              "memberCode": "Paul-Lawless.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Paul-Lawless.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Lawlor, George.",
-              "memberCode": "George-Lawlor.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/George-Lawlor.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Mac Lochlainn, Pádraig.",
-              "memberCode": "Pádraig-MacLochlainn.D.2011-03-09",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pádraig-MacLochlainn.D.2011-03-09"
-            }
-          },
-          {
-            "member": {
-              "showAs": "McDonald, Mary Lou.",
-              "memberCode": "Mary-Lou-McDonald.D.2011-03-09",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Mary-Lou-McDonald.D.2011-03-09"
-            }
-          },
-          {
-            "member": {
-              "showAs": "McGettigan, Donna.",
-              "memberCode": "Donna-McGettigan.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Donna-McGettigan.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "McGuinness, Conor D.",
-              "memberCode": "Conor-D-McGuinness.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Conor-D-McGuinness.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Mitchell, Denise.",
-              "memberCode": "Denise-Mitchell.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Denise-Mitchell.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Mythen, Johnny.",
-              "memberCode": "Johnny-Mythen.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Johnny-Mythen.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Nash, Ged.",
-              "memberCode": "Gerald-Nash.D.2011-03-09",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Gerald-Nash.D.2011-03-09"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Newsome Drennan, Natasha.",
-              "memberCode": "Natasha-Newsome-Drennan.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Natasha-Newsome-Drennan.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ní Raghallaigh, Shónagh.",
-              "memberCode": "Shónagh-Ní-Raghallaigh.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Shónagh-Ní-Raghallaigh.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Nolan, Carol.",
-              "memberCode": "Carol-Nolan.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Carol-Nolan.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "O'Callaghan, Cian.",
-              "memberCode": "Cian-O'Callaghan.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Cian-O'Callaghan.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "O'Donoghue, Robert.",
-              "memberCode": "Robert-O'Donoghue.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Robert-O'Donoghue.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "O'Flynn, Ken.",
-              "memberCode": "Ken-O'Flynn.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ken-O'Flynn.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "O'Gorman, Roderic.",
-              "memberCode": "Roderic-O'Gorman.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Roderic-O'Gorman.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "O'Hara, Louis.",
-              "memberCode": "Louis-O'Hara.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Louis-O'Hara.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "O'Reilly, Louise.",
-              "memberCode": "Louise-O'Reilly.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Louise-O'Reilly.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "O'Rourke, Darren.",
-              "memberCode": "Darren-O'Rourke.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Darren-O'Rourke.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ó Broin, Eoin.",
-              "memberCode": "Eoin-Ó-Broin.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Eoin-Ó-Broin.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ó Laoghaire, Donnchadh.",
-              "memberCode": "Donnchadh-Ó-Laoghaire.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Donnchadh-Ó-Laoghaire.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ó Murchú, Ruairí.",
-              "memberCode": "Ruairí-Ó-Murchú.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ruairí-Ó-Murchú.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ó Snodaigh, Aengus.",
-              "memberCode": "Aengus-Ó-Snodaigh.D.2002-06-06",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Aengus-Ó-Snodaigh.D.2002-06-06"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ó Súilleabháin, Fionntán.",
-              "memberCode": "Fionntán-Ó-Súilleabháin.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Fionntán-Ó-Súilleabháin.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Quaide, Liam.",
-              "memberCode": "Liam-Quaide.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Liam-Quaide.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Quinlivan, Maurice.",
-              "memberCode": "Maurice-Quinlivan.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Maurice-Quinlivan.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Rice, Pádraig.",
-              "memberCode": "Pádraig-Rice.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pádraig-Rice.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Sheehan, Conor.",
-              "memberCode": "Conor-Sheehan.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Conor-Sheehan.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Sherlock, Marie.",
-              "memberCode": "Marie-Sherlock.S.2020-03-30",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Marie-Sherlock.S.2020-03-30"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Smith, Duncan.",
-              "memberCode": "Duncan-Smith.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Duncan-Smith.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Stanley, Brian.",
-              "memberCode": "Brian-Stanley.D.2011-03-09",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Brian-Stanley.D.2011-03-09"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Tóibín, Peadar.",
-              "memberCode": "Peadar-Tóibín.D.2011-03-09",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Peadar-Tóibín.D.2011-03-09"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ward, Charles.",
-              "memberCode": "Charles-Ward.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Charles-Ward.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ward, Mark.",
-              "memberCode": "Mark-Ward.D.2019-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Mark-Ward.D.2019-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Whitmore, Jennifer.",
-              "memberCode": "Jennifer-Whitmore.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Jennifer-Whitmore.D.2020-02-08"
-            }
-          }
-        ]
+        ],
+        "tally": 88,
+        "showAs": "Níl"
       }
     },
     "house": "Dáil Éireann",
@@ -3281,292 +3281,11 @@
     "id": "vote_63",
     "tallies": {
       "staonVotes": {
+        "members": [],
         "tally": 0,
-        "showAs": "Staon",
-        "members": []
-      },
-      "nilVotes": {
-        "tally": 39,
-        "showAs": "Níl",
-        "members": [
-          {
-            "member": {
-              "showAs": "Bennett, Cathy.",
-              "memberCode": "Cathy-Bennett.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Cathy-Bennett.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Brady, John.",
-              "memberCode": "John-Brady.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/John-Brady.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Buckley, Pat.",
-              "memberCode": "Pat-Buckley.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pat-Buckley.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Byrne, Joanna.",
-              "memberCode": "Joanna-Byrne.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Joanna-Byrne.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Carthy, Matt.",
-              "memberCode": "Matt-Carthy.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Matt-Carthy.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Clarke, Sorca.",
-              "memberCode": "Sorca-Clarke.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Sorca-Clarke.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Conway-Walsh, Rose.",
-              "memberCode": "Rose-Conway-Walsh.S.2016-04-25",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Rose-Conway-Walsh.S.2016-04-25"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Cronin, Réada.",
-              "memberCode": "Réada-Cronin.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Réada-Cronin.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Cullinane, David.",
-              "memberCode": "David-Cullinane.S.2011-05-25",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/David-Cullinane.S.2011-05-25"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Daly, Pa.",
-              "memberCode": "Pa-Daly.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pa-Daly.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Devine, Máire.",
-              "memberCode": "Máire-Devine.S.2016-04-25",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Máire-Devine.S.2016-04-25"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Doherty, Pearse.",
-              "memberCode": "Pearse-Doherty.S.2007-07-23",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pearse-Doherty.S.2007-07-23"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Donnelly, Paul.",
-              "memberCode": "Paul-Donnelly.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Paul-Donnelly.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Farrell, Mairéad.",
-              "memberCode": "Mairéad-Farrell.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Mairéad-Farrell.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Gould, Thomas.",
-              "memberCode": "Thomas-Gould.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Thomas-Gould.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Graves, Ann.",
-              "memberCode": "Ann-Graves.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ann-Graves.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Guirke, Johnny.",
-              "memberCode": "Johnny-Guirke.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Johnny-Guirke.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Kenny, Martin.",
-              "memberCode": "Martin-Kenny.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Martin-Kenny.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Kerrane, Claire.",
-              "memberCode": "Claire-Kerrane.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Claire-Kerrane.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Mac Lochlainn, Pádraig.",
-              "memberCode": "Pádraig-MacLochlainn.D.2011-03-09",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pádraig-MacLochlainn.D.2011-03-09"
-            }
-          },
-          {
-            "member": {
-              "showAs": "McDonald, Mary Lou.",
-              "memberCode": "Mary-Lou-McDonald.D.2011-03-09",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Mary-Lou-McDonald.D.2011-03-09"
-            }
-          },
-          {
-            "member": {
-              "showAs": "McGettigan, Donna.",
-              "memberCode": "Donna-McGettigan.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Donna-McGettigan.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "McGuinness, Conor D.",
-              "memberCode": "Conor-D-McGuinness.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Conor-D-McGuinness.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Mitchell, Denise.",
-              "memberCode": "Denise-Mitchell.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Denise-Mitchell.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Mythen, Johnny.",
-              "memberCode": "Johnny-Mythen.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Johnny-Mythen.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Newsome Drennan, Natasha.",
-              "memberCode": "Natasha-Newsome-Drennan.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Natasha-Newsome-Drennan.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ní Raghallaigh, Shónagh.",
-              "memberCode": "Shónagh-Ní-Raghallaigh.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Shónagh-Ní-Raghallaigh.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Nolan, Carol.",
-              "memberCode": "Carol-Nolan.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Carol-Nolan.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "O'Hara, Louis.",
-              "memberCode": "Louis-O'Hara.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Louis-O'Hara.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "O'Reilly, Louise.",
-              "memberCode": "Louise-O'Reilly.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Louise-O'Reilly.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "O'Rourke, Darren.",
-              "memberCode": "Darren-O'Rourke.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Darren-O'Rourke.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ó Broin, Eoin.",
-              "memberCode": "Eoin-Ó-Broin.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Eoin-Ó-Broin.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ó Laoghaire, Donnchadh.",
-              "memberCode": "Donnchadh-Ó-Laoghaire.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Donnchadh-Ó-Laoghaire.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ó Murchú, Ruairí.",
-              "memberCode": "Ruairí-Ó-Murchú.D.2020-02-08",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ruairí-Ó-Murchú.D.2020-02-08"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ó Snodaigh, Aengus.",
-              "memberCode": "Aengus-Ó-Snodaigh.D.2002-06-06",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Aengus-Ó-Snodaigh.D.2002-06-06"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ó Súilleabháin, Fionntán.",
-              "memberCode": "Fionntán-Ó-Súilleabháin.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Fionntán-Ó-Súilleabháin.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Quinlivan, Maurice.",
-              "memberCode": "Maurice-Quinlivan.D.2016-10-03",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Maurice-Quinlivan.D.2016-10-03"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ward, Charles.",
-              "memberCode": "Charles-Ward.D.2024-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Charles-Ward.D.2024-11-29"
-            }
-          },
-          {
-            "member": {
-              "showAs": "Ward, Mark.",
-              "memberCode": "Mark-Ward.D.2019-11-29",
-              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Mark-Ward.D.2019-11-29"
-            }
-          }
-        ]
+        "showAs": "Staon"
       },
       "taVotes": {
-        "tally": 118,
-        "showAs": "Tá",
         "members": [
           {
             "member": {
@@ -4394,7 +4113,288 @@
               "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Jennifer-Whitmore.D.2020-02-08"
             }
           }
-        ]
+        ],
+        "tally": 118,
+        "showAs": "Tá"
+      },
+      "nilVotes": {
+        "members": [
+          {
+            "member": {
+              "showAs": "Bennett, Cathy.",
+              "memberCode": "Cathy-Bennett.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Cathy-Bennett.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Brady, John.",
+              "memberCode": "John-Brady.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/John-Brady.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Buckley, Pat.",
+              "memberCode": "Pat-Buckley.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pat-Buckley.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Byrne, Joanna.",
+              "memberCode": "Joanna-Byrne.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Joanna-Byrne.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Carthy, Matt.",
+              "memberCode": "Matt-Carthy.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Matt-Carthy.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Clarke, Sorca.",
+              "memberCode": "Sorca-Clarke.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Sorca-Clarke.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Conway-Walsh, Rose.",
+              "memberCode": "Rose-Conway-Walsh.S.2016-04-25",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Rose-Conway-Walsh.S.2016-04-25"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Cronin, Réada.",
+              "memberCode": "Réada-Cronin.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Réada-Cronin.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Cullinane, David.",
+              "memberCode": "David-Cullinane.S.2011-05-25",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/David-Cullinane.S.2011-05-25"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Daly, Pa.",
+              "memberCode": "Pa-Daly.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pa-Daly.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Devine, Máire.",
+              "memberCode": "Máire-Devine.S.2016-04-25",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Máire-Devine.S.2016-04-25"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Doherty, Pearse.",
+              "memberCode": "Pearse-Doherty.S.2007-07-23",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pearse-Doherty.S.2007-07-23"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Donnelly, Paul.",
+              "memberCode": "Paul-Donnelly.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Paul-Donnelly.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Farrell, Mairéad.",
+              "memberCode": "Mairéad-Farrell.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Mairéad-Farrell.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Gould, Thomas.",
+              "memberCode": "Thomas-Gould.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Thomas-Gould.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Graves, Ann.",
+              "memberCode": "Ann-Graves.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ann-Graves.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Guirke, Johnny.",
+              "memberCode": "Johnny-Guirke.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Johnny-Guirke.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Kenny, Martin.",
+              "memberCode": "Martin-Kenny.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Martin-Kenny.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Kerrane, Claire.",
+              "memberCode": "Claire-Kerrane.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Claire-Kerrane.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Mac Lochlainn, Pádraig.",
+              "memberCode": "Pádraig-MacLochlainn.D.2011-03-09",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Pádraig-MacLochlainn.D.2011-03-09"
+            }
+          },
+          {
+            "member": {
+              "showAs": "McDonald, Mary Lou.",
+              "memberCode": "Mary-Lou-McDonald.D.2011-03-09",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Mary-Lou-McDonald.D.2011-03-09"
+            }
+          },
+          {
+            "member": {
+              "showAs": "McGettigan, Donna.",
+              "memberCode": "Donna-McGettigan.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Donna-McGettigan.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "McGuinness, Conor D.",
+              "memberCode": "Conor-D-McGuinness.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Conor-D-McGuinness.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Mitchell, Denise.",
+              "memberCode": "Denise-Mitchell.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Denise-Mitchell.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Mythen, Johnny.",
+              "memberCode": "Johnny-Mythen.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Johnny-Mythen.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Newsome Drennan, Natasha.",
+              "memberCode": "Natasha-Newsome-Drennan.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Natasha-Newsome-Drennan.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ní Raghallaigh, Shónagh.",
+              "memberCode": "Shónagh-Ní-Raghallaigh.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Shónagh-Ní-Raghallaigh.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Nolan, Carol.",
+              "memberCode": "Carol-Nolan.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Carol-Nolan.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "O'Hara, Louis.",
+              "memberCode": "Louis-O'Hara.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Louis-O'Hara.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "O'Reilly, Louise.",
+              "memberCode": "Louise-O'Reilly.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Louise-O'Reilly.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "O'Rourke, Darren.",
+              "memberCode": "Darren-O'Rourke.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Darren-O'Rourke.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ó Broin, Eoin.",
+              "memberCode": "Eoin-Ó-Broin.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Eoin-Ó-Broin.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ó Laoghaire, Donnchadh.",
+              "memberCode": "Donnchadh-Ó-Laoghaire.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Donnchadh-Ó-Laoghaire.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ó Murchú, Ruairí.",
+              "memberCode": "Ruairí-Ó-Murchú.D.2020-02-08",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Ruairí-Ó-Murchú.D.2020-02-08"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ó Snodaigh, Aengus.",
+              "memberCode": "Aengus-Ó-Snodaigh.D.2002-06-06",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Aengus-Ó-Snodaigh.D.2002-06-06"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ó Súilleabháin, Fionntán.",
+              "memberCode": "Fionntán-Ó-Súilleabháin.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Fionntán-Ó-Súilleabháin.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Quinlivan, Maurice.",
+              "memberCode": "Maurice-Quinlivan.D.2016-10-03",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Maurice-Quinlivan.D.2016-10-03"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ward, Charles.",
+              "memberCode": "Charles-Ward.D.2024-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Charles-Ward.D.2024-11-29"
+            }
+          },
+          {
+            "member": {
+              "showAs": "Ward, Mark.",
+              "memberCode": "Mark-Ward.D.2019-11-29",
+              "uri": "https://data.oireachtas.ie/ie/oireachtas/member/id/Mark-Ward.D.2019-11-29"
+            }
+          }
+        ],
+        "tally": 39,
+        "showAs": "Níl"
       }
     },
     "house": "Dáil Éireann",
