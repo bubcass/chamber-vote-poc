@@ -50,6 +50,13 @@ jobs:
         if: steps.commit_data.outputs.changed == 'true'
         run: npm run build
 
+      - name: Configure authenticated remote for deploy
+        if: steps.commit_data.outputs.changed == 'true'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
+
       - name: Deploy site
         if: steps.commit_data.outputs.changed == 'true'
         env:
