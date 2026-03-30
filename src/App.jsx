@@ -238,7 +238,7 @@ export default function App() {
       },
       {
         key: "Clear",
-        label: "Clear filter",
+        label: "All",
         count: null,
         active: voteFilter === null,
         className: "vote-summary__item--all",
@@ -358,6 +358,7 @@ export default function App() {
       </section>
 
       <header className="hero-controls">
+        <h2 className="hero-controls__title">Select a vote</h2>
         <div className="controls controls--single">
           <select
             value={selectedVoteId}
