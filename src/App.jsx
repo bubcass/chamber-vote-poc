@@ -310,7 +310,7 @@ export default function App() {
         constituency: seat.member?.Constituency || "",
         vote_subject: selectedVote?.subject || "",
         vote_result: selectedVote?.outcome || "",
-        vote_cast: seat.vote?.vote || "Absent",
+        vote_cast: seat.vote?.vote || "",
         date: selectedVote?.date || "",
       }));
   }, [seats, selectedVote]);
