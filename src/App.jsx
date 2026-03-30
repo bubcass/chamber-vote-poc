@@ -41,6 +41,47 @@ function getVoteOrderNumber(vote) {
   return match ? Number(match[1]) : -1;
 }
 
+function csvEscape(value) {
+  const str = String(value ?? "");
+  if (str.includes('"') || str.includes(",") || str.includes("\n")) {
+    return `"${str.replace(/"/g, '""')}"`;
+  }
+  return str;
+}
+
+function buildVoteCsv(rows) {
+  const headers = [
+    "name",
+    "party",
+    "constituency",
+    "vote_subject",
+    "vote_result",
+    "vote_cast",
+    "date",
+  ];
+
+  const lines = [
+    headers.join(","),
+    ...rows.map((row) =>
+      headers.map((header) => csvEscape(row[header])).join(","),
+    ),
+  ];
+
+  return lines.join("\n");
+}
+
+function downloadTextFile(filename, content, mimeType) {
+  const blob = new Blob([content], { type: mimeType });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
 function useIframeResize() {
   useEffect(() => {
     function sendHeight() {
@@ -258,23 +299,65 @@ export default function App() {
     });
   }, [seats, query]);
 
+  const currentVoteDownloadRows = useMemo(() => {
+    if (!selectedVote) return [];
+
+    return seats
+      .filter((seat) => seat.member)
+      .map((seat) => ({
+        name: seat.member?.Deputy || "",
+        party: seat.member?.Party || "",
+        constituency: seat.member?.Constituency || "",
+        vote_subject: selectedVote?.subject || "",
+        vote_result: selectedVote?.outcome || "",
+        vote_cast: seat.vote?.vote || "Absent",
+        date: selectedVote?.date || "",
+      }));
+  }, [seats, selectedVote]);
+
+  function handleDownloadCurrentVoteCsv() {
+    if (!selectedVote || currentVoteDownloadRows.length === 0) return;
+
+    const csv = buildVoteCsv(currentVoteDownloadRows);
+    const safeId = (selectedVote.voteID || selectedVote.id || "vote").replace(
+      /[^a-zA-Z0-9_-]/g,
+      "",
+    );
+
+    downloadTextFile(`${safeId}.csv`, csv, "text/csv;charset=utf-8;");
+  }
+
   const selected =
     seats.find((seat) => seat.seat_label === selectedSeat) || null;
   const hasSelection = Boolean(selected);
 
   return (
     <div className="app">
-      <header className="hero">
-        <div>
-          {/*
-          <div className="eyebrow">Interactive</div>
-          <h1>Vote Explorer | Dáil Éireann</h1>
-          <p>
-            Take a look at how TDs voted with our interactive vote explorer.
-          </p>
-          */}
+      <section className="hero">
+        <div className="hero__media">
+          <video
+            className="hero__video"
+            src={`${import.meta.env.BASE_URL}media/chamber-vote-hero.mp4`}
+            autoPlay
+            muted
+            loop
+            playsInline
+          />
         </div>
 
+        <div className="hero__overlay">
+          <div className="hero__content">
+            <p className="hero__eyebrow">Stór | Open data insights</p>
+            <h1 className="hero__title">Vote Explorer</h1>
+            <p className="hero__subtitle">
+              Explore how TDs voted in Dáil Éireann with an interactive chamber
+              map.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <header className="hero-controls">
         <div className="controls controls--single">
           <select
             value={selectedVoteId}
@@ -451,6 +534,17 @@ export default function App() {
           {hasSelection ? (
             <SeatPanel seat={selected} displayMode="vote" />
           ) : null}
+        </section>
+
+        <section className="download-block">
+          <button
+            type="button"
+            className="pq-download"
+            onClick={handleDownloadCurrentVoteCsv}
+            disabled={!selectedVote}
+          >
+            Download this vote data
+          </button>
         </section>
       </main>
     </div>

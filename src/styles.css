@@ -1,17 +1,43 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap");
 
 :root {
+    --page-bg: #f6f3ea;
+    --text: #1c1917;
+    --text-soft: #5f5a50;
+    --text-muted: #7a7468;
+    --accent: #666666;
+    --link: #666666;
+    --link-hover: #4f4f4f;
+    --border: #ddd5c2;
+    --button-border: #666666;
+    --chip-hover: #e6e0d3;
+    --page-max: 1500px;
+    --text-max: 78ch;
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.25rem;
+    --space-6: 1.75rem;
+    --space-7: 2.25rem;
+    --space-8: 3rem;
     font-family: "IBM Plex Sans", system-ui, sans-serif;
-    color: #1c1917;
-    background: #f4f2ea;
+    color: var(--text);
+    background: var(--page-bg);
 }
 
 * {
     box-sizing: border-box;
 }
 
+html {
+    background: var(--page-bg);
+}
+
 body {
     margin: 0;
+    background: var(--page-bg);
+    color: var(--text);
 }
 
 a {
@@ -21,22 +47,17 @@ a {
 /* App shell */
 
 .app {
-    max-width: 1500px;
+    max-width: var(--page-max);
     margin: 0 auto;
     padding: 24px;
 }
 
-.hero,
 .main-panel,
-.panel {
+.panel,
+.hero-controls {
     background: #fff;
     border: 1px solid #e7e5e4;
     border-radius: 4px;
-}
-
-.hero {
-    padding: 24px;
-    margin-bottom: 24px;
 }
 
 .layout {
@@ -77,6 +98,99 @@ a {
 .panel--member-active {
     border-color: rgba(127, 108, 46, 0.28);
     box-shadow: 0 10px 28px rgba(17, 24, 39, 0.05);
+}
+
+/* Hero */
+
+.hero {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    margin: 0 0 var(--space-6) 0;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    background: transparent;
+}
+
+.hero__media {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    background: #000;
+}
+
+.hero__video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    opacity: 0.78;
+}
+
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    align-items: flex-end;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.72),
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.05)
+    );
+    pointer-events: none;
+}
+
+.hero__content {
+    max-width: var(--text-max);
+    width: 100%;
+    margin: 0;
+    padding: var(--space-6) var(--space-4);
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.hero__eyebrow {
+    margin: 0 0 0.35rem 0;
+    max-width: none;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.88;
+}
+
+.hero__title {
+    margin: 0 0 0.45rem 0;
+    max-width: 20ch;
+    color: #fff;
+    font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+}
+
+.hero__subtitle {
+    margin: 0;
+    max-width: 60ch;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.5;
+    opacity: 0.95;
+}
+
+.hero-controls {
+    margin-bottom: 24px;
+    padding: 18px;
+}
+
+.hero-controls .controls {
+    margin-top: 0;
 }
 
 /* Typography */
@@ -191,7 +305,7 @@ p {
 }
 
 .vote-debate-meta__link {
-    color: #7f6c2e;
+    color: #666666;
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
@@ -201,7 +315,7 @@ p {
 }
 
 .vote-debate-meta__link:hover {
-    color: #5f5122;
+    color: #4f4f4f;
 }
 
 .vote-debate-meta__link::after {
@@ -256,7 +370,7 @@ p {
 }
 
 .vote-summary__item:focus-visible {
-    outline: 2px solid rgba(127, 108, 46, 0.35);
+    outline: 2px solid rgba(102, 102, 102, 0.28);
     outline-offset: 2px;
 }
 
@@ -280,12 +394,11 @@ p {
 }
 
 .vote-summary__item--all.vote-summary__item--active {
-    background: #f8f3df;
-}
-
-.vote-summary__item--all.vote-summary__item--active {
-    color: #5f5122;
+    background: var(--page-bg);
+    border-color: #b5b5b5;
+    color: #4f4f4f;
     font-weight: 600;
+    box-shadow: inset 0 0 0 1px rgba(102, 102, 102, 0.08);
 }
 
 .vote-summary__item--yes.vote-summary__item--active {
@@ -303,9 +416,9 @@ p {
 }
 
 .vote-summary__item--abstain.vote-summary__item--active {
-    background: rgba(140, 140, 140, 0.12);
-    border-color: rgba(140, 140, 140, 0.28);
-    color: #5c5c5c;
+    background: rgba(132, 161, 196, 0.12);
+    border-color: rgba(132, 161, 196, 0.28);
+    color: #5c7596;
     font-weight: 600;
 }
 
@@ -316,7 +429,7 @@ p {
 }
 
 .vote-summary__item--all .vote-summary__dot {
-    background: #7f6c2e;
+    background: #666666;
 }
 
 .vote-summary__item--yes .vote-summary__dot {
@@ -485,7 +598,7 @@ p {
 }
 
 .vote-context-card__link {
-    color: #1c1917;
+    color: #666666;
     text-decoration: underline;
     text-decoration-thickness: 1px;
     text-underline-offset: 3px;
@@ -494,7 +607,7 @@ p {
 }
 
 .vote-context-card__link:hover {
-    color: #7f6c2e;
+    color: #4f4f4f;
 }
 
 .vote-context-card__link::after {
@@ -707,7 +820,29 @@ p {
     }
 }
 
+@media (max-width: 720px) {
+    .hero__media {
+        height: 240px;
+    }
+
+    .hero__content {
+        padding: var(--space-5) var(--space-4);
+    }
+
+    .hero__title {
+        font-size: 1.6rem;
+    }
+
+    .hero__subtitle {
+        font-size: 0.95rem;
+    }
+}
+
 @media (max-width: 639px) {
+    .app {
+        padding: 16px;
+    }
+
     .vote-banner {
         padding: 16px;
         font-size: 1.1rem;
@@ -778,4 +913,51 @@ p {
 .search-clear:focus-visible {
     outline: 2px solid rgba(127, 108, 46, 0.35);
     outline-offset: 2px;
+}
+
+/* Download */
+
+.download-block {
+    display: grid;
+    gap: 12px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.download-block .pq-download {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 14px;
+    border: 3px solid #666666;
+    border-radius: 4px;
+    background: transparent;
+    color: #555;
+    font: inherit;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.35;
+    text-align: center;
+    text-decoration: none;
+    letter-spacing: 0.01em;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.download-block .pq-download:hover,
+.download-block .pq-download:focus-visible {
+    background: #666666;
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+}
+
+.download-block .pq-download:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
 }
