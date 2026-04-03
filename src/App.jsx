@@ -360,6 +360,14 @@ export default function App() {
           </div>
         </section>
 
+        <div className="intro-copy">
+          Votes cast in the Dáil Chamber, referred to formally as{" "}
+          <strong>divisions of the House</strong>, are an intrinsic part of
+          parliamentary business. Each Member is entitled to cast a vote and in
+          doing so can influence each piece of business considered by
+          Parliament.
+        </div>
+
         <section className="hero-controls">
           <div className="controls controls--single">
             <label className="control-label" htmlFor="vote-select">
