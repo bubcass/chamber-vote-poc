@@ -354,7 +354,7 @@ export default function App() {
               <h1 className="hero__title">Vote Explorer</h1>
               <p className="hero__subtitle">
                 Explore how TDs voted in Dáil Éireann with an interactive
-                chamber map.
+                Chamber map.
               </p>
             </div>
           </div>
