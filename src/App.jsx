@@ -71,7 +71,9 @@ function buildVoteCsv(rows) {
 }
 
 function downloadTextFile(filename, content, mimeType) {
-  const blob = new Blob([content], { type: mimeType });
+  const isCsv = mimeType.includes("text/csv");
+  const payload = isCsv ? `\uFEFF${content}` : content;
+  const blob = new Blob([payload], { type: mimeType });
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
@@ -333,55 +335,60 @@ export default function App() {
 
   return (
     <div className="app">
-      <section className="hero">
-        <div className="hero__media">
-          <video
-            className="hero__video"
-            src={`${import.meta.env.BASE_URL}media/chamber-vote-hero.mp4`}
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
-        </div>
-
-        <div className="hero__overlay">
-          <div className="hero__content">
-            <p className="hero__eyebrow">Stór | Open data insights</p>
-            <h1 className="hero__title">Vote Explorer</h1>
-            <p className="hero__subtitle">
-              Explore how TDs voted in Dáil Éireann with an interactive chamber
-              map.
-            </p>
+      <header>
+        <section className="hero">
+          <div className="hero__media">
+            <video
+              className="hero__video"
+              src={`${import.meta.env.BASE_URL}media/chamber-vote-hero.mp4`}
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
           </div>
-        </div>
-      </section>
 
-      <header className="hero-controls">
-        <h2 className="hero-controls__title">Select a vote</h2>
-        <div className="controls controls--single">
-          <select
-            value={selectedVoteId}
-            onChange={(e) => {
-              setSelectedVoteId(e.target.value);
-              setSelectedSeat(null);
-              setVoteFilter(null);
-            }}
-            disabled={votesLoading || votes.length === 0}
-          >
-            {votesLoading ? (
-              <option>Loading votes…</option>
-            ) : votes.length === 0 ? (
-              <option>No votes available</option>
-            ) : (
-              votes.map((vote) => (
-                <option key={vote.id} value={vote.id}>
-                  {makeVoteOptionLabel(vote)}
-                </option>
-              ))
-            )}
-          </select>
-        </div>
+          <div className="hero__overlay">
+            <div className="hero__content">
+              <p className="hero__eyebrow">Open data insights</p>
+              <h1 className="hero__title">Vote Explorer</h1>
+              <p className="hero__subtitle">
+                Explore how TDs voted in Dáil Éireann with an interactive
+                chamber map.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="hero-controls">
+          <div className="controls controls--single">
+            <label className="control-label" htmlFor="vote-select">
+              Select a vote
+            </label>
+            <select
+              id="vote-select"
+              value={selectedVoteId}
+              onChange={(e) => {
+                setSelectedVoteId(e.target.value);
+                setSelectedSeat(null);
+                setVoteFilter(null);
+              }}
+              disabled={votesLoading || votes.length === 0}
+            >
+              {votesLoading ? (
+                <option>Loading votes…</option>
+              ) : votes.length === 0 ? (
+                <option>No votes available</option>
+              ) : (
+                votes.map((vote) => (
+                  <option key={vote.id} value={vote.id}>
+                    {makeVoteOptionLabel(vote)}
+                  </option>
+                ))
+              )}
+            </select>
+          </div>
+        </section>
       </header>
 
       <main className="layout layout--stacked">
@@ -458,8 +465,12 @@ export default function App() {
         </section>
 
         <section className="panel panel--search">
+          <label className="control-label" htmlFor="member-search">
+            Filter members
+          </label>
           <div className="search-input-wrap">
             <input
+              id="member-search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Filter by Deputy, constituency or party"
