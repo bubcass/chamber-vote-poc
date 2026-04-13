@@ -3,6 +3,7 @@
     "id": "vote_64",
     "tallies": {
       "taVotes": {
+        "tally": 58,
         "members": [
           {
             "member": {
@@ -411,15 +412,10 @@
             }
           }
         ],
-        "showAs": "Tá",
-        "tally": 58
-      },
-      "staonVotes": {
-        "members": [],
-        "showAs": "Staon",
-        "tally": 0
+        "showAs": "Tá"
       },
       "nilVotes": {
+        "tally": 85,
         "members": [
           {
             "member": {
@@ -1017,8 +1013,12 @@
             }
           }
         ],
-        "showAs": "Níl",
-        "tally": 85
+        "showAs": "Níl"
+      },
+      "staonVotes": {
+        "tally": 0,
+        "members": [],
+        "showAs": "Staon"
       }
     },
     "house": "Dáil Éireann",
@@ -1035,6 +1035,7 @@
     "id": "vote_65",
     "tallies": {
       "taVotes": {
+        "tally": 79,
         "members": [
           {
             "member": {
@@ -1590,15 +1591,10 @@
             }
           }
         ],
-        "showAs": "Tá",
-        "tally": 79
-      },
-      "staonVotes": {
-        "members": [],
-        "showAs": "Staon",
-        "tally": 0
+        "showAs": "Tá"
       },
       "nilVotes": {
+        "tally": 67,
         "members": [
           {
             "member": {
@@ -2070,8 +2066,12 @@
             }
           }
         ],
-        "showAs": "Níl",
-        "tally": 67
+        "showAs": "Níl"
+      },
+      "staonVotes": {
+        "tally": 0,
+        "members": [],
+        "showAs": "Staon"
       }
     },
     "house": "Dáil Éireann",
@@ -2088,6 +2088,7 @@
     "id": "vote_66",
     "tallies": {
       "taVotes": {
+        "tally": 79,
         "members": [
           {
             "member": {
@@ -2643,15 +2644,10 @@
             }
           }
         ],
-        "showAs": "Tá",
-        "tally": 79
-      },
-      "staonVotes": {
-        "members": [],
-        "showAs": "Staon",
-        "tally": 0
+        "showAs": "Tá"
       },
       "nilVotes": {
+        "tally": 68,
         "members": [
           {
             "member": {
@@ -3130,8 +3126,12 @@
             }
           }
         ],
-        "showAs": "Níl",
-        "tally": 68
+        "showAs": "Níl"
+      },
+      "staonVotes": {
+        "tally": 0,
+        "members": [],
+        "showAs": "Staon"
       }
     },
     "house": "Dáil Éireann",
@@ -3148,6 +3148,7 @@
     "id": "vote_67",
     "tallies": {
       "taVotes": {
+        "tally": 79,
         "members": [
           {
             "member": {
@@ -3703,15 +3704,10 @@
             }
           }
         ],
-        "showAs": "Tá",
-        "tally": 79
-      },
-      "staonVotes": {
-        "members": [],
-        "showAs": "Staon",
-        "tally": 0
+        "showAs": "Tá"
       },
       "nilVotes": {
+        "tally": 69,
         "members": [
           {
             "member": {
@@ -4197,8 +4193,12 @@
             }
           }
         ],
-        "showAs": "Níl",
-        "tally": 69
+        "showAs": "Níl"
+      },
+      "staonVotes": {
+        "tally": 0,
+        "members": [],
+        "showAs": "Staon"
       }
     },
     "house": "Dáil Éireann",
@@ -4215,6 +4215,7 @@
     "id": "vote_68",
     "tallies": {
       "taVotes": {
+        "tally": 79,
         "members": [
           {
             "member": {
@@ -4770,15 +4771,10 @@
             }
           }
         ],
-        "showAs": "Tá",
-        "tally": 79
-      },
-      "staonVotes": {
-        "members": [],
-        "showAs": "Staon",
-        "tally": 0
+        "showAs": "Tá"
       },
       "nilVotes": {
+        "tally": 69,
         "members": [
           {
             "member": {
@@ -5264,8 +5260,12 @@
             }
           }
         ],
-        "showAs": "Níl",
-        "tally": 69
+        "showAs": "Níl"
+      },
+      "staonVotes": {
+        "tally": 0,
+        "members": [],
+        "showAs": "Staon"
       }
     },
     "house": "Dáil Éireann",
@@ -5282,6 +5282,7 @@
     "id": "vote_69",
     "tallies": {
       "taVotes": {
+        "tally": 79,
         "members": [
           {
             "member": {
@@ -5837,15 +5838,10 @@
             }
           }
         ],
-        "showAs": "Tá",
-        "tally": 79
-      },
-      "staonVotes": {
-        "members": [],
-        "showAs": "Staon",
-        "tally": 0
+        "showAs": "Tá"
       },
       "nilVotes": {
+        "tally": 69,
         "members": [
           {
             "member": {
@@ -6331,8 +6327,12 @@
             }
           }
         ],
-        "showAs": "Níl",
-        "tally": 69
+        "showAs": "Níl"
+      },
+      "staonVotes": {
+        "tally": 0,
+        "members": [],
+        "showAs": "Staon"
       }
     },
     "house": "Dáil Éireann",
@@ -6349,6 +6349,7 @@
     "id": "vote_70",
     "tallies": {
       "taVotes": {
+        "tally": 79,
         "members": [
           {
             "member": {
@@ -6904,15 +6905,10 @@
             }
           }
         ],
-        "showAs": "Tá",
-        "tally": 79
-      },
-      "staonVotes": {
-        "members": [],
-        "showAs": "Staon",
-        "tally": 0
+        "showAs": "Tá"
       },
       "nilVotes": {
+        "tally": 69,
         "members": [
           {
             "member": {
@@ -7398,8 +7394,12 @@
             }
           }
         ],
-        "showAs": "Níl",
-        "tally": 69
+        "showAs": "Níl"
+      },
+      "staonVotes": {
+        "tally": 0,
+        "members": [],
+        "showAs": "Staon"
       }
     },
     "house": "Dáil Éireann",
@@ -7416,6 +7416,7 @@
     "id": "vote_71",
     "tallies": {
       "taVotes": {
+        "tally": 79,
         "members": [
           {
             "member": {
@@ -7971,15 +7972,10 @@
             }
           }
         ],
-        "showAs": "Tá",
-        "tally": 79
-      },
-      "staonVotes": {
-        "members": [],
-        "showAs": "Staon",
-        "tally": 0
+        "showAs": "Tá"
       },
       "nilVotes": {
+        "tally": 69,
         "members": [
           {
             "member": {
@@ -8465,8 +8461,12 @@
             }
           }
         ],
-        "showAs": "Níl",
-        "tally": 69
+        "showAs": "Níl"
+      },
+      "staonVotes": {
+        "tally": 0,
+        "members": [],
+        "showAs": "Staon"
       }
     },
     "house": "Dáil Éireann",
@@ -8483,6 +8483,7 @@
     "id": "vote_72",
     "tallies": {
       "taVotes": {
+        "tally": 79,
         "members": [
           {
             "member": {
@@ -9038,15 +9039,10 @@
             }
           }
         ],
-        "showAs": "Tá",
-        "tally": 79
-      },
-      "staonVotes": {
-        "members": [],
-        "showAs": "Staon",
-        "tally": 0
+        "showAs": "Tá"
       },
       "nilVotes": {
+        "tally": 69,
         "members": [
           {
             "member": {
@@ -9532,8 +9528,12 @@
             }
           }
         ],
-        "showAs": "Níl",
-        "tally": 69
+        "showAs": "Níl"
+      },
+      "staonVotes": {
+        "tally": 0,
+        "members": [],
+        "showAs": "Staon"
       }
     },
     "house": "Dáil Éireann",
@@ -9550,6 +9550,7 @@
     "id": "vote_73",
     "tallies": {
       "taVotes": {
+        "tally": 45,
         "members": [
           {
             "member": {
@@ -9867,15 +9868,10 @@
             }
           }
         ],
-        "showAs": "Tá",
-        "tally": 45
-      },
-      "staonVotes": {
-        "members": [],
-        "showAs": "Staon",
-        "tally": 0
+        "showAs": "Tá"
       },
       "nilVotes": {
+        "tally": 103,
         "members": [
           {
             "member": {
@@ -10599,8 +10595,12 @@
             }
           }
         ],
-        "showAs": "Níl",
-        "tally": 103
+        "showAs": "Níl"
+      },
+      "staonVotes": {
+        "tally": 0,
+        "members": [],
+        "showAs": "Staon"
       }
     },
     "house": "Dáil Éireann",
@@ -10617,6 +10617,7 @@
     "id": "vote_74",
     "tallies": {
       "taVotes": {
+        "tally": 101,
         "members": [
           {
             "member": {
@@ -11326,15 +11327,10 @@
             }
           }
         ],
-        "showAs": "Tá",
-        "tally": 101
-      },
-      "staonVotes": {
-        "members": [],
-        "showAs": "Staon",
-        "tally": 0
+        "showAs": "Tá"
       },
       "nilVotes": {
+        "tally": 45,
         "members": [
           {
             "member": {
@@ -11652,8 +11648,12 @@
             }
           }
         ],
-        "showAs": "Níl",
-        "tally": 45
+        "showAs": "Níl"
+      },
+      "staonVotes": {
+        "tally": 0,
+        "members": [],
+        "showAs": "Staon"
       }
     },
     "house": "Dáil Éireann",
