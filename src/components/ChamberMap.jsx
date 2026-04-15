@@ -36,7 +36,9 @@ export default function ChamberMap({
 
       const fill =
         displayMode === "vote"
-          ? voteColorMap[seat?.vote?.vote || "Absent"]
+          ? seat?.member
+            ? voteColorMap[seat?.vote?.vote || "Absent"]
+            : "#ffffff"
           : partyColorMap[seat?.member?.Party] || "#d6d3d1";
 
       const isSelected = seatLabel === selectedSeat;
