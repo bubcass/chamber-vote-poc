@@ -255,9 +255,13 @@ export default function App() {
   const [votesLoading, setVotesLoading] = useState(true);
   const [votesError, setVotesError] = useState("");
   const [downloadsOpen, setDownloadsOpen] = useState(false);
+  const [votePickerOpen, setVotePickerOpen] = useState(false);
+  const [voteSearch, setVoteSearch] = useState("");
 
   const mapPanelRef = useRef(null);
   const downloadsRef = useRef(null);
+  const votePickerRef = useRef(null);
+  const voteSearchInputRef = useRef(null);
 
   useEffect(() => {
     async function init() {
@@ -324,16 +328,31 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    if (votePickerOpen && voteSearchInputRef.current) {
+      voteSearchInputRef.current.focus();
+    }
+  }, [votePickerOpen]);
+
+  useEffect(() => {
     function handleOutsideClick(event) {
-      if (!downloadsRef.current) return;
-      if (!downloadsRef.current.contains(event.target)) {
+      if (
+        downloadsRef.current &&
+        !downloadsRef.current.contains(event.target)
+      ) {
         setDownloadsOpen(false);
+      }
+      if (
+        votePickerRef.current &&
+        !votePickerRef.current.contains(event.target)
+      ) {
+        setVotePickerOpen(false);
       }
     }
 
     function handleEscape(event) {
       if (event.key === "Escape") {
         setDownloadsOpen(false);
+        setVotePickerOpen(false);
       }
     }
 
@@ -355,6 +374,27 @@ export default function App() {
       debateUrl: buildDebateUrl(vote.date, vote.section),
     };
   }, [votes, selectedVoteId]);
+
+  const filteredVoteOptions = useMemo(() => {
+    const q = voteSearch.trim().toLowerCase();
+    if (!q) return votes;
+
+    return votes.filter((vote) => {
+      const haystack = [
+        vote.debateShowAs,
+        vote.subject,
+        vote.date,
+        formatIrishDate(vote.date),
+        vote.voteID,
+        vote.id,
+      ]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+
+      return haystack.includes(q);
+    });
+  }, [votes, voteSearch]);
 
   const voteSummaryItems = useMemo(() => {
     if (!selectedVote) return [];
@@ -498,6 +538,14 @@ export default function App() {
     setDownloadsOpen(false);
   }
 
+  function handleSelectVote(voteId) {
+    setSelectedVoteId(voteId);
+    setSelectedSeat(null);
+    setVoteFilter(null);
+    setVotePickerOpen(false);
+    setVoteSearch("");
+  }
+
   const selected =
     seats.find((seat) => seat.seat_label === selectedSeat) || null;
   const hasSelection = Boolean(selected);
@@ -539,32 +587,77 @@ export default function App() {
 
         <section className="hero-controls">
           <div className="controls controls--single">
-            <label className="control-label" htmlFor="vote-select">
+            <label className="control-label" htmlFor="vote-picker-trigger">
               Select a vote
             </label>
-            <select
-              id="vote-select"
-              value={selectedVoteId}
-              onChange={(e) => {
-                setSelectedVoteId(e.target.value);
-                setSelectedSeat(null);
-                setVoteFilter(null);
-                setDownloadsOpen(false);
-              }}
-              disabled={votesLoading || votes.length === 0}
-            >
-              {votesLoading ? (
-                <option>Loading votes…</option>
-              ) : votes.length === 0 ? (
-                <option>No votes available</option>
-              ) : (
-                votes.map((vote) => (
-                  <option key={vote.id} value={vote.id}>
-                    {makeVoteOptionLabel(vote)}
-                  </option>
-                ))
-              )}
-            </select>
+
+            <div className="vote-picker" ref={votePickerRef}>
+              <button
+                id="vote-picker-trigger"
+                type="button"
+                className="vote-picker__trigger"
+                aria-haspopup="dialog"
+                aria-expanded={votePickerOpen}
+                onClick={() => setVotePickerOpen((open) => !open)}
+                disabled={votesLoading || votes.length === 0}
+              >
+                <span className="vote-picker__trigger-text">
+                  {votesLoading
+                    ? "Loading votes…"
+                    : selectedVote
+                      ? makeVoteOptionLabel(selectedVote)
+                      : "No votes available"}
+                </span>
+              </button>
+
+              {votePickerOpen ? (
+                <div
+                  className="vote-picker__menu"
+                  role="dialog"
+                  aria-label="Select a vote"
+                >
+                  <div className="vote-picker__search-wrap">
+                    <input
+                      ref={voteSearchInputRef}
+                      type="text"
+                      className="vote-picker__search"
+                      value={voteSearch}
+                      onChange={(e) => setVoteSearch(e.target.value)}
+                      placeholder="Search votes by date or title"
+                      aria-label="Search votes"
+                    />
+                  </div>
+
+                  <div className="vote-picker__results">
+                    {filteredVoteOptions.length === 0 ? (
+                      <div className="vote-picker__empty">
+                        No matching votes
+                      </div>
+                    ) : (
+                      filteredVoteOptions.map((vote) => (
+                        <button
+                          key={vote.id}
+                          type="button"
+                          className={`vote-picker__option${
+                            vote.id === selectedVoteId
+                              ? " vote-picker__option--active"
+                              : ""
+                          }`}
+                          onClick={() => handleSelectVote(vote.id)}
+                        >
+                          <span className="vote-picker__option-date">
+                            {formatIrishDate(vote.date)}
+                          </span>
+                          <span className="vote-picker__option-title">
+                            {vote.debateShowAs || "Division"}
+                          </span>
+                        </button>
+                      ))
+                    )}
+                  </div>
+                </div>
+              ) : null}
+            </div>
           </div>
         </section>
       </header>
@@ -773,7 +866,7 @@ export default function App() {
             onClick={handleDownloadCurrentVoteCsv}
             disabled={!selectedVote}
           >
-            Download this vote data
+            Download the vote data
           </button>
         </section>
       </main>
