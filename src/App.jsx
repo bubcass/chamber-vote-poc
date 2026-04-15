@@ -193,9 +193,21 @@ export default function App() {
         }
 
         const json = await res.json();
-        const normalised = normaliseVotesDataset(json).sort(
-          (a, b) => getVoteOrderNumber(b) - getVoteOrderNumber(a),
-        );
+        const normalised = normaliseVotesDataset(json).sort((a, b) => {
+          const yearA = new Date(a.date).getFullYear();
+          const yearB = new Date(b.date).getFullYear();
+
+          if (yearB !== yearA) {
+            return yearB - yearA;
+          }
+
+          const voteDiff = getVoteOrderNumber(b) - getVoteOrderNumber(a);
+          if (voteDiff !== 0) {
+            return voteDiff;
+          }
+
+          return new Date(b.date).getTime() - new Date(a.date).getTime();
+        });
 
         setVotes(normalised);
         setSelectedVoteId(normalised[0]?.id || "");
