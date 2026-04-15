@@ -194,19 +194,15 @@ export default function App() {
 
         const json = await res.json();
         const normalised = normaliseVotesDataset(json).sort((a, b) => {
-          const yearA = new Date(a.date).getFullYear();
-          const yearB = new Date(b.date).getFullYear();
+          const yearA = Number(String(a.date).slice(0, 4));
+          const yearB = Number(String(b.date).slice(0, 4));
 
-          if (yearB !== yearA) {
-            return yearB - yearA;
-          }
+          if (yearB !== yearA) return yearB - yearA;
 
           const voteDiff = getVoteOrderNumber(b) - getVoteOrderNumber(a);
-          if (voteDiff !== 0) {
-            return voteDiff;
-          }
+          if (voteDiff !== 0) return voteDiff;
 
-          return new Date(b.date).getTime() - new Date(a.date).getTime();
+          return String(b.date).localeCompare(String(a.date));
         });
 
         setVotes(normalised);
@@ -350,12 +346,19 @@ export default function App() {
     if (!selectedVote || currentVoteDownloadRows.length === 0) return;
 
     const csv = buildVoteCsv(currentVoteDownloadRows);
-    const safeId = (selectedVote.voteID || selectedVote.id || "vote").replace(
-      /[^a-zA-Z0-9_-]/g,
-      "",
-    );
 
-    downloadTextFile(`${safeId}.csv`, csv, "text/csv;charset=utf-8;");
+    const safeTitle = (selectedVote.debateShowAs || "vote")
+      .replace(/[^\w\s-]/g, "")
+      .trim()
+      .replace(/\s+/g, "_");
+
+    const safeDate = formatIrishDate(selectedVote.date)
+      .replace(/\s+/g, "_")
+      .replace(/,/g, "");
+
+    const filename = `${safeTitle}_${safeDate}.csv`;
+
+    downloadTextFile(filename, csv, "text/csv;charset=utf-8;");
   }
 
   const selected =
