@@ -17,6 +17,23 @@ function formatIrishDate(isoDate) {
   }).format(d);
 }
 
+function resolveSeatForDate(rows, memberCode, voteDate) {
+  if (!memberCode || !voteDate) return null;
+
+  const voteTime = new Date(voteDate).getTime();
+
+  return rows.find((row) => {
+    const rowMemberCode = clean(row.member_code ?? row.memberCode);
+
+    if (rowMemberCode !== clean(memberCode)) return false;
+
+    const start = new Date(row.start_date).getTime();
+    const end = row.end_date ? new Date(row.end_date).getTime() : Infinity;
+
+    return voteTime >= start && voteTime <= end;
+  });
+}
+
 function makeVoteOptionLabel(vote) {
   const date = formatIrishDate(vote.date);
   const title = vote.debateShowAs || "Division";
@@ -140,7 +157,7 @@ export default function App() {
   useEffect(() => {
     async function init() {
       const seatingRowsRaw = await loadCsv(
-        `${import.meta.env.BASE_URL}seatAssignments.csv`,
+        `${import.meta.env.BASE_URL}seatAssignmentsHistory.csv`,
       );
 
       const seatingRows = seatingRowsRaw.map((row) => ({
@@ -258,29 +275,29 @@ export default function App() {
   const membersByCode = useMemo(() => byKey(members, "Code"), [members]);
 
   const seats = useMemo(() => {
-    const labels = Object.keys(assignmentsBySeat);
+    if (!selectedVote) return [];
 
-    return labels.map((seat_label) => {
-      const assignment = assignmentsBySeat[seat_label] || null;
+    return members
+      .map((member) => {
+        const assignment = resolveSeatForDate(
+          assignments,
+          member.Code,
+          selectedVote.date,
+        );
 
-      let member = null;
-      if (assignment?.member_code) {
-        member = membersByCode[clean(assignment.member_code)] || null;
-      }
+        if (!assignment?.seat_label) return null;
 
-      const vote =
-        assignment?.member_code && selectedVote?.byMemberCode
-          ? selectedVote.byMemberCode[clean(assignment.member_code)] || null
-          : null;
+        const vote = selectedVote.byMemberCode?.[clean(member.Code)] || null;
 
-      return {
-        seat_label,
-        assignment,
-        member,
-        vote,
-      };
-    });
-  }, [assignmentsBySeat, membersByCode, selectedVote]);
+        return {
+          seat_label: clean(assignment.seat_label),
+          assignment,
+          member,
+          vote,
+        };
+      })
+      .filter(Boolean);
+  }, [assignments, members, selectedVote]);
 
   const filteredSeats = useMemo(() => {
     const q = query.toLowerCase();
