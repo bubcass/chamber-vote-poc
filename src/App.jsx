@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { loadCsv } from "./lib/csv.js";
 import { byKey, normaliseMemberApiRows, clean } from "./lib/joins.js";
 import ChamberMap from "./components/ChamberMap.jsx";
@@ -101,6 +101,107 @@ function downloadTextFile(filename, content, mimeType) {
   URL.revokeObjectURL(url);
 }
 
+function sanitizeFilenamePart(value) {
+  return String(value || "")
+    .replace(/[^\w\s-]/g, "")
+    .trim()
+    .replace(/\s+/g, "_");
+}
+
+function buildVoteFilenameBase(selectedVote) {
+  const safeTitle = sanitizeFilenamePart(selectedVote?.debateShowAs || "vote");
+  const safeDate = sanitizeFilenamePart(formatIrishDate(selectedVote?.date));
+  return `${safeTitle}_${safeDate}`;
+}
+
+function serializeSvg(svgNode) {
+  const clone = svgNode.cloneNode(true);
+
+  if (!clone.getAttribute("xmlns")) {
+    clone.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+  }
+  if (!clone.getAttribute("xmlns:xlink")) {
+    clone.setAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink");
+  }
+
+  return new XMLSerializer().serializeToString(clone);
+}
+
+function downloadSvgFromNode(svgNode, filename) {
+  if (!svgNode) return;
+
+  const source = serializeSvg(svgNode);
+  const blob = new Blob([source], {
+    type: "image/svg+xml;charset=utf-8",
+  });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
+function downloadPngFromSvgNode(svgNode, filename) {
+  if (!svgNode) return;
+
+  const source = serializeSvg(svgNode);
+  const svgBlob = new Blob([source], {
+    type: "image/svg+xml;charset=utf-8",
+  });
+  const url = URL.createObjectURL(svgBlob);
+  const img = new Image();
+
+  img.onload = () => {
+    const svgRect = svgNode.getBoundingClientRect();
+    const viewBox = svgNode.viewBox?.baseVal;
+    const width = Math.round(viewBox?.width || svgRect.width || 1200);
+    const height = Math.round(viewBox?.height || svgRect.height || 700);
+
+    const scale = 2;
+    const canvas = document.createElement("canvas");
+    canvas.width = width * scale;
+    canvas.height = height * scale;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) {
+      URL.revokeObjectURL(url);
+      return;
+    }
+
+    ctx.scale(scale, scale);
+    ctx.fillStyle = "#f6f3ea";
+    ctx.fillRect(0, 0, width, height);
+    ctx.drawImage(img, 0, 0, width, height);
+
+    canvas.toBlob((blob) => {
+      if (!blob) {
+        URL.revokeObjectURL(url);
+        return;
+      }
+
+      const pngUrl = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = pngUrl;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(pngUrl);
+      URL.revokeObjectURL(url);
+    }, "image/png");
+  };
+
+  img.onerror = () => {
+    URL.revokeObjectURL(url);
+  };
+
+  img.src = url;
+}
+
 function useIframeResize() {
   useEffect(() => {
     function sendHeight() {
@@ -153,6 +254,10 @@ export default function App() {
   const [voteFilter, setVoteFilter] = useState(null);
   const [votesLoading, setVotesLoading] = useState(true);
   const [votesError, setVotesError] = useState("");
+  const [downloadsOpen, setDownloadsOpen] = useState(false);
+
+  const mapPanelRef = useRef(null);
+  const downloadsRef = useRef(null);
 
   useEffect(() => {
     async function init() {
@@ -218,6 +323,29 @@ export default function App() {
     loadVotes();
   }, []);
 
+  useEffect(() => {
+    function handleOutsideClick(event) {
+      if (!downloadsRef.current) return;
+      if (!downloadsRef.current.contains(event.target)) {
+        setDownloadsOpen(false);
+      }
+    }
+
+    function handleEscape(event) {
+      if (event.key === "Escape") {
+        setDownloadsOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    document.addEventListener("keydown", handleEscape);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener("keydown", handleEscape);
+    };
+  }, []);
+
   const selectedVote = useMemo(() => {
     const vote = votes.find((v) => v.id === selectedVoteId) || null;
     if (!vote) return null;
@@ -275,11 +403,6 @@ export default function App() {
     ];
   }, [selectedVote, voteFilter]);
 
-  const assignmentsBySeat = useMemo(
-    () => byKey(assignments, "seat_label"),
-    [assignments],
-  );
-
   const membersByCode = useMemo(() => byKey(members, "Code"), [members]);
 
   const seats = useMemo(() => {
@@ -305,7 +428,7 @@ export default function App() {
         };
       })
       .filter(Boolean);
-  }, [assignments, members, selectedVote]);
+  }, [assignments, members, selectedVote, membersByCode]);
 
   const filteredSeats = useMemo(() => {
     const q = query.toLowerCase();
@@ -346,19 +469,33 @@ export default function App() {
     if (!selectedVote || currentVoteDownloadRows.length === 0) return;
 
     const csv = buildVoteCsv(currentVoteDownloadRows);
-
-    const safeTitle = (selectedVote.debateShowAs || "vote")
-      .replace(/[^\w\s-]/g, "")
-      .trim()
-      .replace(/\s+/g, "_");
-
-    const safeDate = formatIrishDate(selectedVote.date)
-      .replace(/\s+/g, "_")
-      .replace(/,/g, "");
-
-    const filename = `${safeTitle}_${safeDate}.csv`;
+    const filename = `${buildVoteFilenameBase(selectedVote)}.csv`;
 
     downloadTextFile(filename, csv, "text/csv;charset=utf-8;");
+    setDownloadsOpen(false);
+  }
+
+  function getMapSvgNode() {
+    return mapPanelRef.current?.querySelector(".map-svg-frame svg") || null;
+  }
+
+  function handleDownloadSvg() {
+    const svgNode = getMapSvgNode();
+    if (!svgNode || !selectedVote) return;
+
+    downloadSvgFromNode(svgNode, `${buildVoteFilenameBase(selectedVote)}.svg`);
+    setDownloadsOpen(false);
+  }
+
+  function handleDownloadPng() {
+    const svgNode = getMapSvgNode();
+    if (!svgNode || !selectedVote) return;
+
+    downloadPngFromSvgNode(
+      svgNode,
+      `${buildVoteFilenameBase(selectedVote)}.png`,
+    );
+    setDownloadsOpen(false);
   }
 
   const selected =
@@ -412,6 +549,7 @@ export default function App() {
                 setSelectedVoteId(e.target.value);
                 setSelectedSeat(null);
                 setVoteFilter(null);
+                setDownloadsOpen(false);
               }}
               disabled={votesLoading || votes.length === 0}
             >
@@ -438,7 +576,7 @@ export default function App() {
           </section>
         ) : null}
 
-        <section className="main-panel main-panel--full">
+        <section className="main-panel main-panel--full" ref={mapPanelRef}>
           {selectedVote ? (
             <div className="vote-header">
               <div className="vote-debate-meta">
@@ -493,6 +631,46 @@ export default function App() {
               </div>
             </div>
           ) : null}
+
+          <div className="map-actions" ref={downloadsRef}>
+            <button
+              type="button"
+              className="map-actions__toggle"
+              aria-haspopup="menu"
+              aria-expanded={downloadsOpen}
+              aria-label="Download options"
+              title="Download options"
+              onClick={() => setDownloadsOpen((open) => !open)}
+            >
+              ⋮
+            </button>
+
+            {downloadsOpen ? (
+              <div className="map-actions__menu" role="menu">
+                <button
+                  type="button"
+                  role="menuitem"
+                  onClick={handleDownloadCurrentVoteCsv}
+                >
+                  Download CSV
+                </button>
+                <button
+                  type="button"
+                  role="menuitem"
+                  onClick={handleDownloadPng}
+                >
+                  Download PNG
+                </button>
+                <button
+                  type="button"
+                  role="menuitem"
+                  onClick={handleDownloadSvg}
+                >
+                  Download SVG
+                </button>
+              </div>
+            ) : null}
+          </div>
 
           <ChamberMap
             seats={filteredSeats}
