@@ -18,7 +18,7 @@ function buildDebateUrl(date, section) {
 }
 
 async function fetchVotes() {
-  const dateStart = "2026-01-01";
+  const dateStart = "2025-11-25";
   const dateEnd = todayISO();
 
   const url = `https://api.oireachtas.ie/v1/divisions?date_start=${dateStart}&date_end=${dateEnd}&limit=500`;
