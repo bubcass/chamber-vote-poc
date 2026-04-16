@@ -339,10 +339,12 @@ p {
 
 .vote-picker {
     position: relative;
+    min-width: 0;
 }
 
 .vote-picker__trigger {
     width: 100%;
+    max-width: 100%;
     min-width: 0;
     min-height: 54px;
     padding: 0.75rem 2.6rem 0.75rem 0.75rem;
@@ -355,6 +357,7 @@ p {
     text-align: left;
     cursor: pointer;
     position: relative;
+    overflow: hidden;
     transition:
         border-color 0.25s ease,
         background-color 0.25s ease,
