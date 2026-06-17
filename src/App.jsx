@@ -17,21 +17,41 @@ function formatIrishDate(isoDate) {
   }).format(d);
 }
 
+function parseIsoDateStart(isoDate) {
+  if (!isoDate) return Number.NaN;
+  return new Date(`${isoDate}T00:00:00`).getTime();
+}
+
+function parseIsoDateEnd(isoDate) {
+  if (!isoDate) return Infinity;
+  return new Date(`${isoDate}T23:59:59.999`).getTime();
+}
+
 function resolveSeatForDate(rows, memberCode, voteDate) {
   if (!memberCode || !voteDate) return null;
 
-  const voteTime = new Date(voteDate).getTime();
+  const voteTime = parseIsoDateStart(voteDate);
+  const normalizedMemberCode = clean(memberCode);
+  let bestMatch = null;
+  let bestStart = -Infinity;
 
-  return rows.find((row) => {
+  for (const row of rows) {
     const rowMemberCode = clean(row.member_code ?? row.memberCode);
+    if (rowMemberCode !== normalizedMemberCode) continue;
 
-    if (rowMemberCode !== clean(memberCode)) return false;
+    const start = parseIsoDateStart(row.start_date);
+    const end = parseIsoDateEnd(row.end_date);
 
-    const start = new Date(row.start_date).getTime();
-    const end = row.end_date ? new Date(row.end_date).getTime() : Infinity;
+    if (Number.isNaN(start)) continue;
+    if (voteTime < start || voteTime > end) continue;
 
-    return voteTime >= start && voteTime <= end;
-  });
+    if (start > bestStart) {
+      bestMatch = row;
+      bestStart = start;
+    }
+  }
+
+  return bestMatch;
 }
 
 function makeVoteOptionLabel(vote) {
