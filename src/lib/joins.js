@@ -3,6 +3,17 @@ export function clean(value) {
   return String(value).trim();
 }
 
+export function canonicalMemberCode(value) {
+  const cleaned = clean(value).replace(/\/+$/, "");
+  if (!cleaned) return "";
+
+  try {
+    return decodeURIComponent(cleaned);
+  } catch {
+    return cleaned.replace(/%27/gi, "'");
+  }
+}
+
 export function byKey(rows, key) {
   return Object.fromEntries(
     rows
@@ -14,7 +25,7 @@ export function byKey(rows, key) {
 
 export function normaliseMemberApiRows(rows) {
   return rows.map((row) => {
-    const Code = clean(row.Code ?? row.code ?? row.memberCode);
+    const Code = canonicalMemberCode(row.Code ?? row.code ?? row.memberCode);
 
     return {
       Deputy: clean(row.Deputy ?? row.deputy ?? row.name),

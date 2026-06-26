@@ -1,14 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
-import chamberSvg from "../data/chamber.svg?raw";
-import { partyColorMap } from "../data/partiesPalette.js";
 import { voteColorMap } from "../lib/votes.js";
 
+const EMPTY_SEAT_COLOR = "#ffffff";
+const FILTERED_SEAT_COLOR = "#ece9e2";
+const BASE_STROKE = "rgba(255,255,255,0.72)";
+const FILTERED_STROKE = "rgba(255,255,255,0.34)";
+const HOVER_STROKE = "rgba(255,255,255,0.94)";
+const SELECTED_STROKE = "rgba(255,255,255,0.98)";
+
 export default function ChamberMap({
+  chamber,
+  svgMarkup,
   seats = [],
   allSeats = [],
   selectedSeat,
   onSelect,
-  displayMode = "vote",
   voteFilter = null,
 }) {
   const ref = useRef(null);
@@ -34,42 +40,42 @@ export default function ChamberMap({
       const seatLabel = el.getAttribute("data-seat");
       const seat = getSeatData(seatLabel);
 
-      const fill =
-        displayMode === "vote"
-          ? seat?.member
-            ? voteColorMap[seat?.vote?.vote || "Absent"]
-            : "#ffffff"
-          : partyColorMap[seat?.member?.Party] || "#d6d3d1";
+      const baseFill = seat?.member
+        ? voteColorMap[seat?.vote?.vote || "Absent"]
+        : EMPTY_SEAT_COLOR;
 
       const isSelected = seatLabel === selectedSeat;
       const isHovered = seatLabel === hoveredSeat;
       const passesSearch = visibleSeatLabels.has(seatLabel);
       const passesVoteFilter = !voteFilter || seat?.vote?.vote === voteFilter;
-
       const dimmed = !passesSearch || !passesVoteFilter;
+      const fill = dimmed ? FILTERED_SEAT_COLOR : baseFill;
 
       const applyStateToShape = (shape) => {
         shape.style.fill = fill;
+        shape.setAttribute("fill", fill);
         shape.style.transition =
           "fill 0.25s ease, opacity 0.2s ease, stroke 0.2s ease, filter 0.2s ease";
+        shape.style.strokeLinejoin = "round";
+        shape.style.strokeLinecap = "round";
 
         if (isSelected) {
-          shape.style.stroke = "#111827";
-          shape.style.strokeWidth = "1.4";
+          shape.style.stroke = SELECTED_STROKE;
+          shape.style.strokeWidth = "1.45";
           shape.style.filter =
-            "brightness(0.97) drop-shadow(0 0 6px rgba(17,24,39,0.10))";
+            "brightness(0.99) drop-shadow(0 0 3px rgba(17,24,39,0.08))";
           shape.style.opacity = "1";
         } else if (isHovered && !dimmed) {
-          shape.style.stroke = "rgba(17,24,39,0.45)";
-          shape.style.strokeWidth = "1.1";
+          shape.style.stroke = HOVER_STROKE;
+          shape.style.strokeWidth = "1.0";
           shape.style.filter =
-            "brightness(0.99) drop-shadow(0 0 5px rgba(17,24,39,0.08))";
-          shape.style.opacity = "0.92";
+            "brightness(1.01) drop-shadow(0 0 3px rgba(17,24,39,0.05))";
+          shape.style.opacity = "0.98";
         } else {
-          shape.style.stroke = "none";
-          shape.style.strokeWidth = "0";
+          shape.style.stroke = dimmed ? FILTERED_STROKE : BASE_STROKE;
+          shape.style.strokeWidth = dimmed ? "0.24" : "0.46";
           shape.style.filter = "none";
-          shape.style.opacity = dimmed ? "0.16" : "1";
+          shape.style.opacity = dimmed ? "0.52" : "1";
         }
       };
 
@@ -79,7 +85,8 @@ export default function ChamberMap({
         applyStateToShape(el);
       }
 
-      el.style.cursor = "pointer";
+      el.style.cursor = dimmed ? "default" : "pointer";
+      el.style.pointerEvents = dimmed ? "none" : "auto";
     };
 
     seatEls.forEach(paintSeat);
@@ -125,10 +132,9 @@ export default function ChamberMap({
         y: event.clientY - containerRect.top - 14,
         name: seat.member.Deputy,
         party: seat.member.Party,
-        constituency: seat.member.Constituency || "",
-        color: partyColorMap[seat.member.Party] || "#666666",
+        topValue: chamber.tooltipTopValue(seat),
+        bottomValue: chamber.tooltipBottomValue(seat),
         image: seat.member.imageUrl || "",
-        vote: seat.vote?.vote || null,
       });
     };
 
@@ -160,21 +166,13 @@ export default function ChamberMap({
       svgRoot.removeEventListener("pointerleave", handlePointerLeave);
       svgRoot.removeEventListener("click", handleClick);
     };
-  }, [
-    seats,
-    allSeats,
-    selectedSeat,
-    hoveredSeat,
-    onSelect,
-    displayMode,
-    voteFilter,
-  ]);
+  }, [chamber, seats, allSeats, selectedSeat, hoveredSeat, onSelect, voteFilter]);
 
   return (
     <div className="map-wrap map-wrap--interactive" ref={ref}>
       <div
         className="map-svg-frame"
-        dangerouslySetInnerHTML={{ __html: chamberSvg }}
+        dangerouslySetInnerHTML={{ __html: svgMarkup }}
       />
 
       {tooltip ? (
@@ -191,7 +189,6 @@ export default function ChamberMap({
                 src={tooltip.image}
                 alt=""
                 className="map-tooltip__avatar"
-                style={{ borderColor: tooltip.color }}
                 onError={(e) => {
                   e.currentTarget.style.display = "none";
                 }}
@@ -201,17 +198,15 @@ export default function ChamberMap({
             <div className="map-tooltip__text">
               <div className="map-tooltip__name">{tooltip.name}</div>
 
-              <div className="map-tooltip__party">
-                <span
-                  className="map-tooltip__chip"
-                  style={{ backgroundColor: tooltip.color }}
-                />
-                {tooltip.party}
-              </div>
+              {tooltip.topValue ? (
+                <div className="map-tooltip__constituency">{tooltip.topValue}</div>
+              ) : null}
 
-              {tooltip.constituency ? (
+              <div className="map-tooltip__party">{tooltip.party}</div>
+
+              {tooltip.bottomValue ? (
                 <div className="map-tooltip__constituency">
-                  {tooltip.constituency}
+                  {tooltip.bottomValue}
                 </div>
               ) : null}
             </div>

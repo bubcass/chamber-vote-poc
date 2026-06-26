@@ -1,3 +1,14 @@
+import { canonicalMemberCode } from "./joins.js";
+
+function buildStableVoteId(record) {
+  const date = record?.date || "";
+  const section = record?.section || "";
+  const voteID = record?.voteID || "";
+  const debateShowAs = record?.debateShowAs || "";
+
+  return [date, section, voteID, debateShowAs].filter(Boolean).join("::");
+}
+
 export function normaliseVoteRecord(record) {
   if (!record?.tallies) {
     return {
@@ -27,7 +38,7 @@ export function normaliseVoteRecord(record) {
     const members = group?.members || [];
 
     for (const item of members) {
-      const memberCode = item?.member?.memberCode;
+      const memberCode = canonicalMemberCode(item?.member?.memberCode);
       if (!memberCode) continue;
 
       byMemberCode[memberCode] = {
@@ -40,7 +51,7 @@ export function normaliseVoteRecord(record) {
   }
 
   return {
-    id: record.voteID || "",
+    id: buildStableVoteId(record),
     voteID: record.voteID || "",
     house: record.house || "",
     section: record.section || "",
