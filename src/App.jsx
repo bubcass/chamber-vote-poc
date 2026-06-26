@@ -37,13 +37,10 @@ export default function App() {
       <header>
         <section className="hero">
           <div className="hero__media">
-            <video
+            <img
               className="hero__video"
-              src={`${import.meta.env.BASE_URL}media/chamber-vote-hero.mp4`}
-              autoPlay
-              muted
-              loop
-              playsInline
+              src={`${import.meta.env.BASE_URL}media/hero-divisions.png`}
+              alt=""
             />
           </div>
 
