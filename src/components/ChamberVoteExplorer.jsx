@@ -586,7 +586,19 @@ export default function ChamberVoteExplorer({ chamber }) {
 
   return (
     <>
-      <div className="intro-copy">{chamber.intro}</div>
+      <div className="intro-copy">
+        <p className="intro-copy__body">{chamber.intro}</p>
+        <p className="intro-copy__series">
+          Vote Explorer is part of our{" "}
+          <a
+            className="vote-debate-meta__link"
+            href="https://bubcass.github.io/open-data-insights/"
+          >
+            Open Data Insights series
+          </a>
+          .
+        </p>
+      </div>
 
       <section className="hero-controls">
         <div className="controls controls--single">

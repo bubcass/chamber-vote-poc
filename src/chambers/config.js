@@ -6,7 +6,7 @@ export const chamberConfigs = [
     subtitle:
       "Explore how TDs voted in Dáil Eireann with an interactive chamber map.",
     intro:
-      "Votes cast in Dáil Eireann, referred to formally as divisions of the House, show how TDs aligned on motions, legislation, and other parliamentary business before the chamber.",
+      "Votes cast in the Dáil, referred to formally as divisions of the House, are an intrinsic part of parliamentary business. Each TD is entitled to cast a vote and in doing so can influence each piece of business considered by Parliament.",
     debatePath: "dail",
     membersUrl: `${import.meta.env.BASE_URL}chambers/dail/members.json`,
     chamberSvgUrl: `${import.meta.env.BASE_URL}chambers/dail/chamber.svg`,

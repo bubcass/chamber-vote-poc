@@ -134,6 +134,17 @@ select {
     line-height: 1.5;
 }
 
+.intro-copy__body,
+.intro-copy__series {
+    margin: 0;
+}
+
+.intro-copy__series {
+    margin-top: 0.9rem;
+    font-size: 0.95rem;
+    line-height: 1.45;
+}
+
 .hero {
     position: relative;
     width: 100%;
