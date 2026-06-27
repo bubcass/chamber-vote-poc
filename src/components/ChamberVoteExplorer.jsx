@@ -594,9 +594,9 @@ export default function ChamberVoteExplorer({ chamber }) {
             className="vote-debate-meta__link"
             href="https://bubcass.github.io/open-data-insights/"
           >
-            Open Data Insights series
-          </a>
-          .
+            Open Data Insights
+          </a>{" "}
+          series.
         </p>
       </div>
 
@@ -860,7 +860,9 @@ export default function ChamberVoteExplorer({ chamber }) {
             </section>
           ) : null}
 
-          {hasSelection ? <SeatPanel seat={selected} chamber={chamber} /> : null}
+          {hasSelection ? (
+            <SeatPanel seat={selected} chamber={chamber} />
+          ) : null}
         </section>
 
         <section className="download-block">
