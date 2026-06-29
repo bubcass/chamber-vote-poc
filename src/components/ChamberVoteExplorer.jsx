@@ -30,6 +30,32 @@ function parseIsoDateEnd(isoDate) {
   return new Date(`${isoDate}T23:59:59.999`).getTime();
 }
 
+function resolveAssignmentForSeatDate(rows, seatLabel, voteDate) {
+  if (!seatLabel || !voteDate) return null;
+
+  const voteTime = parseIsoDateStart(voteDate);
+  const normalizedSeatLabel = clean(seatLabel);
+  let bestMatch = null;
+  let bestStart = -Infinity;
+
+  for (const row of rows) {
+    if (clean(row.seat_label) !== normalizedSeatLabel) continue;
+
+    const start = parseIsoDateStart(row.start_date);
+    const end = parseIsoDateEnd(row.end_date);
+
+    if (Number.isNaN(start)) continue;
+    if (voteTime < start || voteTime > end) continue;
+
+    if (start > bestStart) {
+      bestMatch = row;
+      bestStart = start;
+    }
+  }
+
+  return bestMatch;
+}
+
 function resolveSeatForDate(rows, memberCode, voteDate) {
   if (!memberCode || !voteDate) return null;
 
@@ -473,32 +499,40 @@ export default function ChamberVoteExplorer({ chamber }) {
   }, [selectedVote, voteFilter]);
 
   const membersByCode = useMemo(() => byKey(members, "Code"), [members]);
+  const stampedSeatLabels = useMemo(
+    () =>
+      Array.from(
+        new Set(
+          [...svgMarkup.matchAll(/data-seat="([^"]+)"/g)].map((match) => match[1]),
+        ),
+      ),
+    [svgMarkup],
+  );
 
   const seats = useMemo(() => {
     if (!selectedVote) return [];
 
-    return members
-      .map((member) => {
-        const assignment = resolveSeatForDate(
-          assignments,
-          member.Code,
-          selectedVote.date,
-        );
+    return stampedSeatLabels.map((seatLabel) => {
+      const assignment = resolveAssignmentForSeatDate(
+        assignments,
+        seatLabel,
+        selectedVote.date,
+      );
+      const member = assignment?.member_code
+        ? membersByCode[canonicalMemberCode(assignment.member_code)] || null
+        : null;
+      const vote = member
+        ? selectedVote.byMemberCode?.[canonicalMemberCode(member.Code)] || null
+        : null;
 
-        if (!assignment?.seat_label) return null;
-
-        const vote =
-          selectedVote.byMemberCode?.[canonicalMemberCode(member.Code)] || null;
-
-        return {
-          seat_label: clean(assignment.seat_label),
-          assignment,
-          member,
-          vote,
-        };
-      })
-      .filter(Boolean);
-  }, [assignments, members, selectedVote, membersByCode]);
+      return {
+        seat_label: clean(seatLabel),
+        assignment: assignment || null,
+        member,
+        vote,
+      };
+    });
+  }, [assignments, selectedVote, membersByCode, stampedSeatLabels]);
 
   const filteredSeats = useMemo(() => {
     const q = query.toLowerCase();
@@ -511,6 +545,7 @@ export default function ChamberVoteExplorer({ chamber }) {
         seat.member?.Constituency,
         seat.assignment?.group,
         seat.vote?.vote,
+        seat.member ? "" : "Empty seat No representative is assigned to this seat.",
       ]
         .filter(Boolean)
         .join(" ")

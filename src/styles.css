@@ -835,6 +835,11 @@ select {
     object-fit: cover;
 }
 
+.map-tooltip__avatar--empty {
+    background: #ffffff;
+    border-color: #d6d3d1;
+}
+
 .map-tooltip__text {
     display: flex;
     flex-direction: column;

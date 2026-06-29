@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { voteColorMap } from "../lib/votes.js";
 
+const EMPTY_SEAT_TITLE = "Empty seat";
+const EMPTY_SEAT_MESSAGE = "No representative is assigned to this seat.";
 const EMPTY_SEAT_COLOR = "#ffffff";
 const FILTERED_SEAT_COLOR = "#ece9e2";
 const BASE_STROKE = "rgba(255,255,255,0.72)";
@@ -44,12 +46,14 @@ export default function ChamberMap({
         ? voteColorMap[seat?.vote?.vote || "Absent"]
         : EMPTY_SEAT_COLOR;
 
+      const isEmptySeat = !seat?.member;
       const isSelected = seatLabel === selectedSeat;
       const isHovered = seatLabel === hoveredSeat;
       const passesSearch = visibleSeatLabels.has(seatLabel);
-      const passesVoteFilter = !voteFilter || seat?.vote?.vote === voteFilter;
+      const passesVoteFilter =
+        isEmptySeat || !voteFilter || seat?.vote?.vote === voteFilter;
       const dimmed = !passesSearch || !passesVoteFilter;
-      const fill = dimmed ? FILTERED_SEAT_COLOR : baseFill;
+      const fill = dimmed && !isEmptySeat ? FILTERED_SEAT_COLOR : baseFill;
 
       const applyStateToShape = (shape) => {
         shape.style.fill = fill;
@@ -107,8 +111,10 @@ export default function ChamberMap({
 
       const seatLabel = seatEl.getAttribute("data-seat");
       const seat = getSeatData(seatLabel);
+      const isEmptySeat = !seat?.member;
       const passesSearch = visibleSeatLabels.has(seatLabel);
-      const passesVoteFilter = !voteFilter || seat?.vote?.vote === voteFilter;
+      const passesVoteFilter =
+        isEmptySeat || !voteFilter || seat?.vote?.vote === voteFilter;
 
       if (!passesSearch || !passesVoteFilter) {
         setHoveredSeat(null);
@@ -120,12 +126,21 @@ export default function ChamberMap({
         setHoveredSeat(seatLabel);
       }
 
-      if (!seat?.member) {
-        setTooltip(null);
+      const containerRect = root.getBoundingClientRect();
+
+      if (isEmptySeat) {
+        setTooltip({
+          x: event.clientX - containerRect.left,
+          y: event.clientY - containerRect.top - 14,
+          name: EMPTY_SEAT_TITLE,
+          party: "",
+          topValue: "",
+          bottomValue: EMPTY_SEAT_MESSAGE,
+          image: "",
+          isEmptySeat: true,
+        });
         return;
       }
-
-      const containerRect = root.getBoundingClientRect();
 
       setTooltip({
         x: event.clientX - containerRect.left,
@@ -135,6 +150,7 @@ export default function ChamberMap({
         topValue: chamber.tooltipTopValue(seat),
         bottomValue: chamber.tooltipBottomValue(seat),
         image: seat.member.imageUrl || "",
+        isEmptySeat: false,
       });
     };
 
@@ -149,8 +165,10 @@ export default function ChamberMap({
 
       const seatLabel = seatEl.getAttribute("data-seat");
       const seat = getSeatData(seatLabel);
+      const isEmptySeat = !seat?.member;
       const passesSearch = visibleSeatLabels.has(seatLabel);
-      const passesVoteFilter = !voteFilter || seat?.vote?.vote === voteFilter;
+      const passesVoteFilter =
+        isEmptySeat || !voteFilter || seat?.vote?.vote === voteFilter;
 
       if (!passesSearch || !passesVoteFilter) return;
 
@@ -193,7 +211,12 @@ export default function ChamberMap({
                   e.currentTarget.style.display = "none";
                 }}
               />
-            ) : null}
+            ) : (
+              <div
+                className="map-tooltip__avatar map-tooltip__avatar--empty"
+                aria-hidden="true"
+              />
+            )}
 
             <div className="map-tooltip__text">
               <div className="map-tooltip__name">{tooltip.name}</div>

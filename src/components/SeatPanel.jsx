@@ -1,6 +1,9 @@
 import React from "react";
 import { partyColorMap } from "../data/partiesPalette.js";
 
+const EMPTY_SEAT_TITLE = "Empty seat";
+const EMPTY_SEAT_MESSAGE = "No representative is assigned to this seat.";
+
 export default function SeatPanel({ seat, chamber }) {
   if (!seat) {
     return (
@@ -24,7 +27,8 @@ export default function SeatPanel({ seat, chamber }) {
 
   const secondaryValue = chamber.getSecondaryValue(seat);
   const tertiaryValue = chamber.getTertiaryValue(seat);
-  const borderColor = partyColorMap[party] || "#d6d3d1";
+  const isEmptySeat = !seat.member;
+  const borderColor = isEmptySeat ? "#d6d3d1" : partyColorMap[party] || "#d6d3d1";
   const voteLabel = seat.vote?.vote || "";
 
   const cardInner = (
@@ -46,22 +50,33 @@ export default function SeatPanel({ seat, chamber }) {
             className="member-photo-ring member-photo-ring--empty"
             style={{ borderColor }}
           >
-            <div className="member-photo-placeholder">
-              {chamber.placeholderInitial}
-            </div>
+            {!isEmptySeat ? (
+              <div className="member-photo-placeholder">
+                {chamber.placeholderInitial}
+              </div>
+            ) : null}
           </div>
         )}
 
         <div className="member-card__identity">
-          <h2>{name}</h2>
+          <h2>{isEmptySeat ? EMPTY_SEAT_TITLE : name}</h2>
         </div>
       </div>
 
-      <div className={`vote-banner vote-banner--${seat.vote?.vote || "Absent"}`}>
-        {voteLabel}
-      </div>
+      {!isEmptySeat ? (
+        <div className={`vote-banner vote-banner--${seat.vote?.vote || "Absent"}`}>
+          {voteLabel}
+        </div>
+      ) : null}
 
       <div className="member-meta member-meta--inline">
+        {isEmptySeat ? (
+          <div className="member-meta__item">
+            <span className="member-meta__label">Status</span>
+            <span className="member-meta__value">{EMPTY_SEAT_MESSAGE}</span>
+          </div>
+        ) : null}
+
         {tertiaryValue ? (
           <div className="member-meta__item">
             <span className="member-meta__label">{chamber.tertiaryLabel}</span>
@@ -84,7 +99,7 @@ export default function SeatPanel({ seat, chamber }) {
 
   return (
     <aside className="panel panel--member panel--member-active">
-      {memberUrl ? (
+      {memberUrl && !isEmptySeat ? (
         <a
           href={memberUrl}
           target="_blank"
