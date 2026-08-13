@@ -5,6 +5,13 @@ import "./styles.css";
 
 const OPEN_DATA_INSIGHTS_URL = "https://bubcass.github.io/open-data-insights/";
 const THEME_STORAGE_KEY = "vote-explorer-theme";
+const OIREACHTAS_FOOTER_LINKS = [
+  ["Accessibility", "https://www.oireachtas.ie/en/accessibility-statement/"],
+  ["Cookies", "https://www.oireachtas.ie/en/cookies/"],
+  ["Transparency", "https://www.oireachtas.ie/en/transparency/"],
+  ["Contact us", "https://www.oireachtas.ie/en/contact-us/"],
+  ["Copyright and reuse", "https://www.oireachtas.ie/en/copyright-and-reuse/"],
+];
 
 const ShareIcon = () => (
   <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -22,6 +29,18 @@ const ThemeIcon = ({dark}) => dark ? (
   <svg viewBox="0 0 24 24" aria-hidden="true">
     <path d="M20 15.2A8.2 8.2 0 0 1 8.8 4a8.3 8.3 0 1 0 11.2 11.2Z" />
   </svg>
+);
+
+const OireachtasFooter = () => (
+  <footer className="oireachtas-footer">
+    <nav className="oireachtas-footer__nav" aria-label="Oireachtas information">
+      <ul className="oireachtas-footer__links">
+        {OIREACHTAS_FOOTER_LINKS.map(([label, href]) => (
+          <li key={href}><a href={href}>{label}</a></li>
+        ))}
+      </ul>
+    </nav>
+  </footer>
 );
 
 function getInitialChamberKey() {
@@ -181,8 +200,8 @@ export default function App() {
         </div>
       </header>
 
-      <div className="app">
-        <header>
+      <main className="app">
+        <div className="app__intro">
           <div className="section-nav-shell" ref={navShellRef}>
             <nav className={`section-nav ${navDocked ? "section-nav--docked" : ""} ${navOpen ? "is-open" : ""}`} aria-label="Chamber selection">
               <button type="button" className="section-nav__toggle" onClick={() => setNavOpen((open) => !open)} aria-expanded={navOpen} aria-label={`Current chamber: ${activeChamber.label}. Open chamber navigation`}>
@@ -204,17 +223,16 @@ export default function App() {
               </div>
             </div>
           </section>
-        </header>
+        </div>
 
         <ChamberVoteExplorer chamber={activeChamber} />
-      </div>
 
-      {navDocked && (
-        <div className="mobile-reading-tools" ref={mobileToolsRef}>
+        {navDocked && (
+          <div className="mobile-reading-tools" ref={mobileToolsRef}>
           <button type="button" className="mobile-reading-tools__back" aria-label="Go back" title="Go back" onClick={() => window.history.length > 1 ? window.history.back() : window.location.assign(OPEN_DATA_INSIGHTS_URL)}>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14.5 5-7 7 7 7" /></svg>
           </button>
-          <nav className={`mobile-section-nav ${navOpen ? "is-open" : ""}`} aria-label="Chamber selection">
+          <nav className={`mobile-section-nav ${navOpen ? "is-open" : ""}`} aria-label="Mobile chamber selection">
             <button type="button" className="section-nav__toggle" onClick={() => { setNavOpen((open) => !open); setMoreOpen(false); }} aria-expanded={navOpen}>
               <span>{activeChamber.label}</span><i aria-hidden="true" />
             </button>
@@ -232,14 +250,17 @@ export default function App() {
               </div>
             )}
           </div>
-        </div>
-      )}
+          </div>
+        )}
 
-      {showBackToTop && (
-        <button type="button" className="page-back-to-top" aria-label="Back to top" title="Back to top" onClick={() => window.scrollTo({top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"})}>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6.5 14.5 5.5-5.5 5.5 5.5" /></svg>
-        </button>
-      )}
+        {showBackToTop && (
+          <button type="button" className="page-back-to-top" aria-label="Back to top" title="Back to top" onClick={() => window.scrollTo({top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"})}>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6.5 14.5 5.5-5.5 5.5 5.5" /></svg>
+          </button>
+        )}
+      </main>
+
+      <OireachtasFooter />
     </>
   );
 }
