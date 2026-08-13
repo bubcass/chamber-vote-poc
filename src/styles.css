@@ -18,7 +18,7 @@
     --surface-soft: #ebe6da;
     --surface-glass: rgba(255, 253, 248, 0.9);
     --nav-glass: color-mix(in srgb, var(--page-bg) 76%, transparent);
-    --page-max: 1040px;
+    --page-max: 1100px;
     --masthead-height: 58px;
     --text-max: 78ch;
     --space-1: 0.25rem;
@@ -1286,9 +1286,10 @@ select {
     grid-column: 2;
     justify-self: center;
     color: rgba(255, 255, 255, 0.94);
-    font-size: 0.9rem;
+    font-size: clamp(1.15rem, 1.65vw, 1.45rem);
     font-weight: 600;
-    letter-spacing: 0.01em;
+    line-height: 1.1;
+    letter-spacing: -0.012em;
     text-decoration: none;
     white-space: nowrap;
     transition: opacity 260ms ease;
@@ -1463,7 +1464,7 @@ select {
     :root:not([data-theme="dark"]) .oireachtas-masthead__logo { filter: brightness(0) saturate(100%) invert(25%) sepia(7%) saturate(523%) hue-rotate(3deg) brightness(94%) contrast(91%); }
     .oireachtas-masthead__inner { position: relative; grid-template-columns: auto minmax(0, 1fr) auto; gap: 0.75rem; padding-inline: 12px; }
     .oireachtas-masthead__logo { width: 98px; }
-    .oireachtas-masthead__resource { position: absolute; top: 50%; right: 0; left: 0; grid-column: 1 / -1; width: max-content; min-width: 0; max-width: min(10.75rem, calc(100% - 13rem)); margin-inline: auto; overflow: hidden; color: var(--text); font-size: 0.84rem; line-height: 1.2; text-align: center; text-overflow: ellipsis; white-space: nowrap; transform: translateY(-50%); }
+    .oireachtas-masthead__resource { position: absolute; top: 50%; right: 0; left: 0; grid-column: 1 / -1; width: max-content; min-width: 0; max-width: min(10.75rem, calc(100% - 13rem)); margin-inline: auto; overflow: hidden; color: var(--text); font-size: 0.9rem; line-height: 1.2; text-align: center; text-overflow: ellipsis; white-space: nowrap; transform: translateY(-50%); }
     .oireachtas-masthead__resource:hover,
     .oireachtas-masthead__resource:focus-visible { color: var(--text); }
     .oireachtas-masthead__actions { gap: 0.35rem; }
