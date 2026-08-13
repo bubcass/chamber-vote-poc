@@ -286,7 +286,7 @@ select {
     padding: 0.08rem 0;
     border: 0;
     background: transparent;
-    color: var(--gold);
+    color: var(--text);
     font-size: 0.74rem;
     font-weight: 600;
     letter-spacing: 0.08em;
@@ -295,7 +295,7 @@ select {
     transition:
         color 0.2s ease,
         opacity 0.2s ease;
-    opacity: 0.82;
+    opacity: 1;
     cursor: pointer;
 }
 
@@ -309,6 +309,7 @@ select {
 .section-nav__link[aria-current="page"] {
     position: relative;
     color: var(--text);
+    font-weight: 700;
     opacity: 1;
 }
 
@@ -1410,7 +1411,7 @@ select {
     }
 
     .section-nav--docked .section-nav__list { min-height: var(--masthead-height); }
-    .section-nav--docked .section-nav__link { color: var(--link); }
+    .section-nav--docked .section-nav__link { color: var(--text); }
     .section-nav--docked .section-nav__link[aria-current="page"] { color: var(--text); }
 }
 
