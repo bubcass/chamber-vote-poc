@@ -4,7 +4,8 @@ import { chamberConfigs, defaultChamberKey } from "./chambers/config.js";
 import "./styles.css";
 
 const OPEN_DATA_INSIGHTS_URL = "https://bubcass.github.io/open-data-insights/";
-const THEME_STORAGE_KEY = "vote-explorer-theme";
+const THEME_STORAGE_KEY = "oireachtas-insights-theme";
+const LEGACY_THEME_STORAGE_KEY = "vote-explorer-theme";
 const OIREACHTAS_FOOTER_LINKS = [
   ["Accessibility", "https://www.oireachtas.ie/en/accessibility-statement/"],
   ["Cookies", "https://www.oireachtas.ie/en/cookies/"],
@@ -54,7 +55,13 @@ function getInitialChamberKey() {
 function getInitialTheme() {
   if (typeof window === "undefined") return "light";
   try {
-    const saved = window.localStorage.getItem(THEME_STORAGE_KEY);
+    let saved = window.localStorage.getItem(THEME_STORAGE_KEY);
+    if (saved !== "dark" && saved !== "light") {
+      saved = window.localStorage.getItem(LEGACY_THEME_STORAGE_KEY);
+      if (saved === "dark" || saved === "light") {
+        window.localStorage.setItem(THEME_STORAGE_KEY, saved);
+      }
+    }
     if (saved === "dark" || saved === "light") return saved;
   } catch {}
   return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
@@ -119,8 +126,17 @@ export default function App() {
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
-    try { window.localStorage.setItem(THEME_STORAGE_KEY, theme); } catch {}
   }, [theme]);
+
+  useEffect(() => {
+    const syncTheme = (event) => {
+      if (event.key === THEME_STORAGE_KEY && (event.newValue === "dark" || event.newValue === "light")) {
+        setTheme(event.newValue);
+      }
+    };
+    window.addEventListener("storage", syncTheme);
+    return () => window.removeEventListener("storage", syncTheme);
+  }, []);
 
   useEffect(() => {
     let frame = null;
@@ -181,8 +197,12 @@ export default function App() {
     }
   };
 
-  const toggleTheme = () => setTheme((current) => current === "dark" ? "light" : "dark");
-  const themeLabel = theme === "dark" ? "Use light mode" : "Use dark mode";
+  const toggleTheme = () => setTheme((current) => {
+    const next = current === "dark" ? "light" : "dark";
+    try { window.localStorage.setItem(THEME_STORAGE_KEY, next); } catch {}
+    return next;
+  });
+  const themeLabel = theme === "dark" ? "Use light mode across Insights" : "Use dark mode across Insights";
 
   return (
     <>
@@ -191,7 +211,17 @@ export default function App() {
           <a className="oireachtas-masthead__home" href="https://www.oireachtas.ie/" aria-label="Return to oireachtas.ie" title="Return to oireachtas.ie">
             <img className="oireachtas-masthead__logo" src={`${import.meta.env.BASE_URL}oireachtas-logo.svg`} alt="" width="163" height="69" />
           </a>
-          <a className="oireachtas-masthead__resource" href={OPEN_DATA_INSIGHTS_URL}>Open Data Insights</a>
+          <a className="oireachtas-masthead__resource" href={OPEN_DATA_INSIGHTS_URL} aria-label="Open Data Insights home">
+            <span className="oireachtas-masthead__brand-mark" aria-hidden="true">
+              <svg viewBox="0 0 64 28" focusable="false">
+                <path d="M12 9H26L32 5L38 9H52" /><line x1="12" y1="10.5" x2="52" y2="10.5" /><rect x="12" y="10.5" width="40" height="13.5" />
+                <line x1="27.5" y1="10.5" x2="27.5" y2="24" /><line x1="30" y1="10.5" x2="30" y2="24" /><line x1="34" y1="10.5" x2="34" y2="24" /><line x1="36.5" y1="10.5" x2="36.5" y2="24" /><line x1="26.5" y1="24" x2="37.5" y2="24" />
+                {[[30.7,18.2,2.6,5.8],[15,13,1.7,1.7],[19,13,1.7,1.7],[23,13,1.7,1.7],[39.3,13,1.7,1.7],[43.3,13,1.7,1.7],[47.3,13,1.7,1.7],[15,18,1.7,1.7],[19,18,1.7,1.7],[23,18,1.7,1.7],[39.3,18,1.7,1.7],[43.3,18,1.7,1.7],[47.3,18,1.7,1.7]].map(([x,y,width,height], index) => <rect key={index} className="oireachtas-masthead__brand-mark-fill" x={x} y={y} width={width} height={height} />)}
+                <line x1="12" y1="24" x2="52" y2="24" />
+              </svg>
+            </span>
+            <span className="oireachtas-masthead__brand-copy"><span className="oireachtas-masthead__brand-title">Open Data Insights</span><span className="oireachtas-masthead__brand-tagline">Parliamentary visual data</span></span>
+          </a>
           <div className="oireachtas-masthead__actions">
             <button type="button" className="oireachtas-masthead__action" onClick={handleShare} aria-label="Share this page" title="Share this page"><ShareIcon /></button>
             <button type="button" className="oireachtas-masthead__action" onClick={toggleTheme} aria-label={themeLabel} aria-pressed={theme === "dark"} title={themeLabel}><ThemeIcon dark={theme === "dark"} /></button>
@@ -202,15 +232,6 @@ export default function App() {
 
       <main className="app">
         <div className="app__intro">
-          <div className="section-nav-shell" ref={navShellRef}>
-            <nav className={`section-nav ${navDocked ? "section-nav--docked" : ""} ${navOpen ? "is-open" : ""}`} aria-label="Chamber selection">
-              <button type="button" className="section-nav__toggle" onClick={() => setNavOpen((open) => !open)} aria-expanded={navOpen} aria-label={`Current chamber: ${activeChamber.label}. Open chamber navigation`}>
-                <span>{activeChamber.label}</span><i aria-hidden="true" />
-              </button>
-              <ChamberMenu activeKey={activeChamberKey} onSelect={setActiveChamberKey} />
-            </nav>
-          </div>
-
           <section className="hero">
             <div className="hero__media">
               <img className="hero__video" src={`${import.meta.env.BASE_URL}media/hero-divisions.png`} alt="" />
@@ -223,6 +244,15 @@ export default function App() {
               </div>
             </div>
           </section>
+
+          <div className="section-nav-shell" ref={navShellRef}>
+            <nav className={`section-nav ${navDocked ? "section-nav--docked" : ""} ${navOpen ? "is-open" : ""}`} aria-label="Chamber selection">
+              <button type="button" className="section-nav__toggle" onClick={() => setNavOpen((open) => !open)} aria-expanded={navOpen} aria-label={`Current chamber: ${activeChamber.label}. Open chamber navigation`}>
+                <span>{activeChamber.label}</span><i aria-hidden="true" />
+              </button>
+              <ChamberMenu activeKey={activeChamberKey} onSelect={setActiveChamberKey} />
+            </nav>
+          </div>
         </div>
 
         <ChamberVoteExplorer chamber={activeChamber} />
