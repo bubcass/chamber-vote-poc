@@ -5,8 +5,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/chamber-vote-poc/logo.png" type="image/png" sizes="32x32" />
         <title>Vote Explorer | Houses of the Oireachtas</title>
-      <script type="module" crossorigin src="/chamber-vote-poc/assets/index-ClHaWJ3Z.js"></script>
-      <link rel="stylesheet" crossorigin href="/chamber-vote-poc/assets/index-CY2UGj9I.css">
+        <script>
+          (() => {
+            const key = "oireachtas-insights-theme";
+            const legacyKey = "vote-explorer-theme";
+            try {
+              let theme = localStorage.getItem(key);
+              if (theme !== "dark" && theme !== "light") {
+                theme = localStorage.getItem(legacyKey);
+                if (theme === "dark" || theme === "light") localStorage.setItem(key, theme);
+              }
+              document.documentElement.dataset.theme =
+                theme === "dark" || theme === "light"
+                  ? theme
+                  : matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            } catch {
+              document.documentElement.dataset.theme =
+                matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            }
+          })();
+        </script>
+      <script type="module" crossorigin src="/chamber-vote-poc/assets/index-DK4RG3de.js"></script>
+      <link rel="stylesheet" crossorigin href="/chamber-vote-poc/assets/index-DBDiW5bc.css">
     </head>
     <body>
         <div id="root"></div>
