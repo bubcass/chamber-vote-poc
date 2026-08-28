@@ -2,11 +2,15 @@ name: Fetch votes data and deploy site
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "17,47 * * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: vote-data-refresh
+  cancel-in-progress: false
 
 jobs:
   fetch-build-deploy:
@@ -21,11 +25,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
-
-      - name: Install deps
-        run: npm ci
 
       - name: Fetch latest votes
         run: npm run fetch:votes
@@ -45,6 +46,10 @@ jobs:
             git push
             echo "changed=true" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Install deps
+        if: steps.commit_data.outputs.changed == 'true'
+        run: npm ci
 
       - name: Build site
         if: steps.commit_data.outputs.changed == 'true'
