@@ -107,10 +107,12 @@ export default function App() {
   const [navDocked, setNavDocked] = useState(false);
   const [navOpen, setNavOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
+  const [mastheadMoreOpen, setMastheadMoreOpen] = useState(false);
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [shareStatus, setShareStatus] = useState("");
   const navShellRef = useRef(null);
   const mobileToolsRef = useRef(null);
+  const mastheadActionsRef = useRef(null);
 
   const activeChamber = useMemo(
     () => chamberConfigs.find((chamber) => chamber.key === activeChamberKey) || chamberConfigs[0],
@@ -166,15 +168,18 @@ export default function App() {
     const closeMenus = (event) => {
       const inMobileTools = mobileToolsRef.current?.contains(event.target);
       const inInitialNav = navShellRef.current?.contains(event.target);
-      if (!inMobileTools && !inInitialNav) {
+      const inMastheadActions = mastheadActionsRef.current?.contains(event.target);
+      if (!inMobileTools && !inInitialNav && !inMastheadActions) {
         setNavOpen(false);
         setMoreOpen(false);
+        setMastheadMoreOpen(false);
       }
     };
     const closeOnEscape = (event) => {
       if (event.key === "Escape") {
         setNavOpen(false);
         setMoreOpen(false);
+        setMastheadMoreOpen(false);
       }
     };
     document.addEventListener("pointerdown", closeMenus);
@@ -222,9 +227,9 @@ export default function App() {
             </span>
             <span className="oireachtas-masthead__brand-copy"><span className="oireachtas-masthead__brand-title">Open Data Insights</span><span className="oireachtas-masthead__brand-tagline">Parliamentary visual data</span></span>
           </a>
-          <div className="oireachtas-masthead__actions">
-            <button type="button" className="oireachtas-masthead__action" onClick={handleShare} aria-label="Share this page" title="Share this page"><ShareIcon /></button>
-            <button type="button" className="oireachtas-masthead__action" onClick={toggleTheme} aria-label={themeLabel} aria-pressed={theme === "dark"} title={themeLabel}><ThemeIcon dark={theme === "dark"} /></button>
+          <div className="oireachtas-masthead__actions" ref={mastheadActionsRef}>
+            <button type="button" className="oireachtas-masthead__action oireachtas-masthead__more" onClick={() => setMastheadMoreOpen((open) => !open)} aria-label="More page actions" aria-expanded={mastheadMoreOpen} title="More page actions"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.8" /><circle cx="12" cy="12" r="1.8" /><circle cx="19" cy="12" r="1.8" /></svg></button>
+            {mastheadMoreOpen && <div className="oireachtas-masthead__menu"><button type="button" className="oireachtas-masthead__menu-action" onClick={() => { handleShare(); setMastheadMoreOpen(false); }}><ShareIcon /><span>Share</span></button><button type="button" className="oireachtas-masthead__menu-action" onClick={() => { toggleTheme(); setMastheadMoreOpen(false); }} aria-pressed={theme === "dark"}><ThemeIcon dark={theme === "dark"} /><span>{theme === "dark" ? "Light mode" : "Dark mode"}</span></button></div>}
             <span className="visually-hidden" aria-live="polite">{shareStatus}</span>
           </div>
         </div>
