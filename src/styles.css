@@ -1337,6 +1337,8 @@ select {
 }
 
 .oireachtas-masthead__action svg,
+.oireachtas-masthead__menu-action svg,
+.mobile-reading-tools__menu-action svg,
 .mobile-reading-tools svg {
     width: 19px;
     height: 19px;
