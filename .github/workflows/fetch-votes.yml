@@ -2,7 +2,8 @@ name: Fetch votes data and deploy site
 
 on:
   schedule:
-    - cron: "17,47 * * * *"
+    # Spread runs across the hour and avoid GitHub Actions' busiest times.
+    - cron: "7,22,37,52 * * * *"
   workflow_dispatch:
 
 permissions:

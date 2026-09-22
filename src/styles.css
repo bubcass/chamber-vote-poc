@@ -392,6 +392,21 @@ select {
     min-width: 0;
 }
 
+.vote-data-status {
+    margin: -0.3rem 0 0.55rem;
+    color: var(--muted);
+    font-size: 0.82rem;
+    line-height: 1.35;
+}
+
+.vote-data-status--live {
+    color: #276544;
+}
+
+.vote-data-status--fallback {
+    color: #88550e;
+}
+
 .vote-picker__trigger {
     width: 100%;
     max-width: 100%;

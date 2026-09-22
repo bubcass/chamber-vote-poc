@@ -2,6 +2,7 @@ export const chamberConfigs = [
   {
     key: "dail",
     label: "Dáil",
+    house: "Dáil Éireann",
     title: "Vote Explorer: Dáil",
     subtitle:
       "Explore how TDs voted in Dáil Eireann with an interactive chamber map.",
@@ -31,6 +32,7 @@ export const chamberConfigs = [
   {
     key: "seanad",
     label: "Seanad",
+    house: "Seanad Éireann",
     title: "Vote Explorer: Seanad",
     subtitle:
       "Explore how Senators voted in Seanad Eireann with an interactive chamber map.",

@@ -10,6 +10,69 @@ import ChamberMap from "./ChamberMap.jsx";
 import SeatPanel from "./SeatPanel.jsx";
 import { normaliseVotesDataset } from "../lib/votes.js";
 
+const DIVISIONS_API_URL = "https://api.oireachtas.ie/v1/divisions";
+const LIVE_VOTES_LOOKBACK_DAYS = 14;
+const LIVE_VOTES_LIMIT = 500;
+
+function isoDateDaysAgo(days) {
+  const date = new Date();
+  date.setUTCDate(date.getUTCDate() - days);
+  return date.toISOString().slice(0, 10);
+}
+
+function sortVotes(votes) {
+  return [...votes].sort((a, b) => {
+    const dateDiff = String(b.date).localeCompare(String(a.date));
+    if (dateDiff !== 0) return dateDiff;
+
+    const voteDiff = getVoteOrderNumber(b) - getVoteOrderNumber(a);
+    if (voteDiff !== 0) return voteDiff;
+
+    return String(b.id).localeCompare(String(a.id));
+  });
+}
+
+function mergeVotes(savedVotes, liveVotes) {
+  const merged = new Map(savedVotes.map((vote) => [vote.id, vote]));
+  for (const vote of liveVotes) merged.set(vote.id, vote);
+  return sortVotes(Array.from(merged.values()));
+}
+
+async function fetchLiveVotes(chamber, signal) {
+  const dateStart = isoDateDaysAgo(LIVE_VOTES_LOOKBACK_DAYS);
+  const dateEnd = new Date().toISOString().slice(0, 10);
+  const url = new URL(DIVISIONS_API_URL);
+  url.searchParams.set("date_start", dateStart);
+  url.searchParams.set("date_end", dateEnd);
+  url.searchParams.set("limit", String(LIVE_VOTES_LIMIT));
+
+  const response = await fetch(url, { signal });
+  if (!response.ok) {
+    throw new Error(`Failed to fetch live vote data (${response.status})`);
+  }
+
+  const payload = await response.json();
+  const records = (payload?.results || [])
+    .map((result) => {
+      const division = result?.division;
+      return {
+        id: division?.voteId,
+        tallies: division?.tallies,
+        house: division?.chamber?.showAs,
+        outcome: division?.outcome,
+        debateShowAs: division?.debate?.showAs,
+        subject: division?.subject?.showAs,
+        tellers: division?.tellers,
+        voteID: division?.voteId,
+        date: result?.contextDate,
+        section: division?.debate?.debateSection,
+      };
+    })
+    .filter((record) => record.house === chamber.house);
+
+  return normaliseVotesDataset(records);
+}
+
 function formatIrishDate(isoDate) {
   if (!isoDate) return "";
   const d = new Date(`${isoDate}T00:00:00`);
@@ -305,6 +368,7 @@ export default function ChamberVoteExplorer({ chamber }) {
   const [voteFilter, setVoteFilter] = useState(null);
   const [votesLoading, setVotesLoading] = useState(true);
   const [votesError, setVotesError] = useState("");
+  const [liveVotesStatus, setLiveVotesStatus] = useState("loading");
   const [downloadsOpen, setDownloadsOpen] = useState(false);
   const [votePickerOpen, setVotePickerOpen] = useState(false);
   const [voteSearch, setVoteSearch] = useState("");
@@ -347,9 +411,22 @@ export default function ChamberVoteExplorer({ chamber }) {
   }, [chamber]);
 
   useEffect(() => {
+    const controller = new AbortController();
+
+    function selectLatestAvailableVote(nextVotes) {
+      setSelectedVoteId((currentVoteId) =>
+        nextVotes.some((vote) => vote.id === currentVoteId)
+          ? currentVoteId
+          : nextVotes[0]?.id || "",
+      );
+    }
+
     async function loadVotes() {
       setVotesLoading(true);
       setVotesError("");
+      setLiveVotesStatus("loading");
+
+      let savedVotes = [];
 
       try {
         const res = await fetch(chamber.voteDetailsUrl, { cache: "no-store" });
@@ -359,27 +436,37 @@ export default function ChamberVoteExplorer({ chamber }) {
         }
 
         const json = await res.json();
-        const normalised = normaliseVotesDataset(json).sort((a, b) => {
-          const dateDiff = String(b.date).localeCompare(String(a.date));
-          if (dateDiff !== 0) return dateDiff;
+        savedVotes = sortVotes(normaliseVotesDataset(json));
 
-          const voteDiff = getVoteOrderNumber(b) - getVoteOrderNumber(a);
-          if (voteDiff !== 0) return voteDiff;
-
-          return String(b.id).localeCompare(String(a.id));
-        });
-
-        setVotes(normalised);
-        setSelectedVoteId(normalised[0]?.id || "");
+        setVotes(savedVotes);
+        selectLatestAvailableVote(savedVotes);
       } catch (err) {
-        console.error(err);
-        setVotesError("Unable to load vote data.");
+        console.error("Unable to load saved vote data.", err);
+      }
+
+      try {
+        const liveVotes = await fetchLiveVotes(chamber, controller.signal);
+        if (controller.signal.aborted) return;
+
+        const mergedVotes = mergeVotes(savedVotes, liveVotes);
+        setVotes(mergedVotes);
+        selectLatestAvailableVote(mergedVotes);
+        setLiveVotesStatus("live");
+      } catch (err) {
+        if (err?.name === "AbortError") return;
+        console.error("Unable to refresh live vote data.", err);
+        setLiveVotesStatus("fallback");
+
+        if (savedVotes.length === 0) {
+          setVotesError("Unable to load vote data.");
+        }
       } finally {
-        setVotesLoading(false);
+        if (!controller.signal.aborted) setVotesLoading(false);
       }
     }
 
     loadVotes();
+    return () => controller.abort();
   }, [chamber]);
 
   useEffect(() => {
@@ -640,6 +727,13 @@ export default function ChamberVoteExplorer({ chamber }) {
           <label className="control-label" htmlFor="vote-picker-trigger">
             Select a vote
           </label>
+          <p className={`vote-data-status vote-data-status--${liveVotesStatus}`} aria-live="polite">
+            {liveVotesStatus === "loading"
+              ? "Checking the latest Oireachtas data…"
+              : liveVotesStatus === "live"
+                ? "Latest Oireachtas data checked just now"
+                : "Showing saved vote data; live refresh is temporarily unavailable"}
+          </p>
 
           <div className="vote-picker" ref={votePickerRef}>
             <button
