@@ -731,7 +731,7 @@ export default function ChamberVoteExplorer({ chamber }) {
             {liveVotesStatus === "loading"
               ? "Checking the latest Oireachtas data…"
               : liveVotesStatus === "live"
-                ? "Latest Oireachtas data checked just now"
+                ? "Live data"
                 : "Showing saved vote data; live refresh is temporarily unavailable"}
           </p>
 
