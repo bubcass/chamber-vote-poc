@@ -377,6 +377,7 @@ export default function ChamberVoteExplorer({ chamber }) {
   const downloadsRef = useRef(null);
   const votePickerRef = useRef(null);
   const voteSearchInputRef = useRef(null);
+  const hasUserSelectedVoteRef = useRef(false);
 
   useEffect(() => {
     async function init() {
@@ -412,9 +413,11 @@ export default function ChamberVoteExplorer({ chamber }) {
 
   useEffect(() => {
     const controller = new AbortController();
+    hasUserSelectedVoteRef.current = false;
 
     function selectLatestAvailableVote(nextVotes) {
       setSelectedVoteId((currentVoteId) =>
+        hasUserSelectedVoteRef.current &&
         nextVotes.some((vote) => vote.id === currentVoteId)
           ? currentVoteId
           : nextVotes[0]?.id || "",
@@ -695,6 +698,7 @@ export default function ChamberVoteExplorer({ chamber }) {
   }
 
   function handleSelectVote(voteId) {
+    hasUserSelectedVoteRef.current = true;
     setSelectedVoteId(voteId);
     setSelectedSeat(null);
     setVoteFilter(null);
