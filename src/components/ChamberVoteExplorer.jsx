@@ -731,13 +731,14 @@ export default function ChamberVoteExplorer({ chamber }) {
           <label className="control-label" htmlFor="vote-picker-trigger">
             Select a vote
           </label>
-          <p className={`vote-data-status vote-data-status--${liveVotesStatus}`} aria-live="polite">
-            {liveVotesStatus === "loading"
-              ? "Checking the latest Oireachtas data…"
-              : liveVotesStatus === "live"
-                ? "Live data"
-                : "Showing saved vote data; live refresh is temporarily unavailable"}
-          </p>
+          {liveVotesStatus === "fallback" ? (
+            <p
+              className="vote-data-status vote-data-status--fallback"
+              role="status"
+            >
+              Showing saved vote data; live refresh is temporarily unavailable
+            </p>
+          ) : null}
 
           <div className="vote-picker" ref={votePickerRef}>
             <button

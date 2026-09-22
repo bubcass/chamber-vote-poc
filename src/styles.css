@@ -399,10 +399,6 @@ select {
     line-height: 1.35;
 }
 
-.vote-data-status--live {
-    color: #276544;
-}
-
 .vote-data-status--fallback {
     color: #88550e;
 }
