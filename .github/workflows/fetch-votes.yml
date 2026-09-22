@@ -1,6 +1,14 @@
 name: Fetch votes data and deploy site
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/fetch-votes.yml"
+      - "src/**"
+      - "index.html"
+      - "package.json"
+      - "package-lock.json"
   schedule:
     # Spread runs across the hour and avoid GitHub Actions' busiest times.
     - cron: "7,22,37,52 * * * *"
@@ -49,22 +57,22 @@ jobs:
           fi
 
       - name: Install deps
-        if: steps.commit_data.outputs.changed == 'true'
+        if: github.event_name == 'push' || steps.commit_data.outputs.changed == 'true'
         run: npm ci
 
       - name: Build site
-        if: steps.commit_data.outputs.changed == 'true'
+        if: github.event_name == 'push' || steps.commit_data.outputs.changed == 'true'
         run: npm run build
 
       - name: Configure authenticated remote for deploy
-        if: steps.commit_data.outputs.changed == 'true'
+        if: github.event_name == 'push' || steps.commit_data.outputs.changed == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git
 
       - name: Deploy site
-        if: steps.commit_data.outputs.changed == 'true'
+        if: github.event_name == 'push' || steps.commit_data.outputs.changed == 'true'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
