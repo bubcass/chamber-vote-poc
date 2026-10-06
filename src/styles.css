@@ -1313,8 +1313,8 @@ select {
 .oireachtas-masthead__resource:focus-visible { color: var(--text); text-decoration: none; }
 .oireachtas-masthead__resource:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 4px; }
 
-.oireachtas-masthead__brand-mark { display: inline-flex; flex: 0 0 auto; align-items: center; justify-content: center; width: 42px; height: 18px; color: var(--text); }
-.oireachtas-masthead__brand-mark svg { width: auto; height: 100%; overflow: visible; fill: none; stroke: currentColor; stroke-width: 1.2; stroke-linejoin: round; }
+.oireachtas-masthead__brand-mark { display: inline-flex; flex: 0 0 auto; align-items: center; justify-content: center; width: 72px; height: 31px; color: var(--text); }
+.oireachtas-masthead__brand-mark svg { display: block; width: 100%; height: 100%; overflow: visible; fill: none; stroke: currentColor; stroke-width: 1.2; stroke-linejoin: round; }
 .oireachtas-masthead__brand-mark-fill { fill: currentColor; stroke: none; }
 .oireachtas-masthead__brand-copy { display: flex; flex-direction: column; gap: 0.08rem; line-height: 1; white-space: nowrap; }
 .oireachtas-masthead__brand-title { color: var(--text); font-size: 0.96rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }

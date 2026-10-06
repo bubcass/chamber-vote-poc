@@ -217,14 +217,7 @@ export default function App() {
             <img className="oireachtas-masthead__logo" src={`${import.meta.env.BASE_URL}oireachtas-logo.svg`} alt="" width="163" height="69" />
           </a>
           <a className="oireachtas-masthead__resource" href={OPEN_DATA_INSIGHTS_URL} aria-label="Open Data Insights home">
-            <span className="oireachtas-masthead__brand-mark" aria-hidden="true">
-              <svg viewBox="0 0 64 28" focusable="false">
-                <path d="M12 9H26L32 5L38 9H52" /><line x1="12" y1="10.5" x2="52" y2="10.5" /><rect x="12" y="10.5" width="40" height="13.5" />
-                <line x1="27.5" y1="10.5" x2="27.5" y2="24" /><line x1="30" y1="10.5" x2="30" y2="24" /><line x1="34" y1="10.5" x2="34" y2="24" /><line x1="36.5" y1="10.5" x2="36.5" y2="24" /><line x1="26.5" y1="24" x2="37.5" y2="24" />
-                {[[30.7,18.2,2.6,5.8],[15,13,1.7,1.7],[19,13,1.7,1.7],[23,13,1.7,1.7],[39.3,13,1.7,1.7],[43.3,13,1.7,1.7],[47.3,13,1.7,1.7],[15,18,1.7,1.7],[19,18,1.7,1.7],[23,18,1.7,1.7],[39.3,18,1.7,1.7],[43.3,18,1.7,1.7],[47.3,18,1.7,1.7]].map(([x,y,width,height], index) => <rect key={index} className="oireachtas-masthead__brand-mark-fill" x={x} y={y} width={width} height={height} />)}
-                <line x1="12" y1="24" x2="52" y2="24" />
-              </svg>
-            </span>
+            <span className="oireachtas-masthead__brand-mark" aria-hidden="true"><svg viewBox="0 0 1092 526" focusable="false"><use href={`${import.meta.env.BASE_URL}insights-house.svg#house-lockup`} /></svg></span>
             <span className="oireachtas-masthead__brand-copy"><span className="oireachtas-masthead__brand-title">Open Data Insights</span><span className="oireachtas-masthead__brand-tagline">Parliamentary visual data</span></span>
           </a>
           <div className="oireachtas-masthead__actions" ref={mastheadActionsRef}>
