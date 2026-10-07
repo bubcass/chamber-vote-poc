@@ -221,7 +221,7 @@ export default function App() {
             <span className="oireachtas-masthead__brand-copy"><span className="oireachtas-masthead__brand-title">Open Data Insights</span><span className="oireachtas-masthead__brand-tagline">Parliamentary visual data</span></span>
           </a>
           <div className="oireachtas-masthead__actions" ref={mastheadActionsRef}>
-            <button type="button" className="oireachtas-masthead__action oireachtas-masthead__more" onClick={() => setMastheadMoreOpen((open) => !open)} aria-label="More page actions" aria-expanded={mastheadMoreOpen} title="More page actions"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.8" /><circle cx="12" cy="12" r="1.8" /><circle cx="19" cy="12" r="1.8" /></svg></button>
+            <button type="button" className="oireachtas-masthead__action oireachtas-masthead__more" onClick={() => setMastheadMoreOpen((open) => !open)} aria-label="Page menu" aria-expanded={mastheadMoreOpen} title="Page menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14" /></svg></button>
             {mastheadMoreOpen && <div className="oireachtas-masthead__menu"><button type="button" className="oireachtas-masthead__menu-action" onClick={() => { handleShare(); setMastheadMoreOpen(false); }}><ShareIcon /><span>Share</span></button><button type="button" className="oireachtas-masthead__menu-action" onClick={() => { toggleTheme(); setMastheadMoreOpen(false); }} aria-pressed={theme === "dark"}><ThemeIcon dark={theme === "dark"} /><span>{theme === "dark" ? "Light mode" : "Dark mode"}</span></button></div>}
             <span className="visually-hidden" aria-live="polite">{shareStatus}</span>
           </div>
@@ -267,8 +267,8 @@ export default function App() {
             {navOpen && <ChamberMenu activeKey={activeChamberKey} onSelect={setActiveChamberKey} className="section-nav__list--mobile" />}
           </nav>
           <div className="mobile-reading-tools__more-wrap">
-            <button type="button" className="mobile-reading-tools__more" aria-label="More options" aria-expanded={moreOpen} title="More options" onClick={() => { setMoreOpen((open) => !open); setNavOpen(false); }}>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.5" /><circle cx="12" cy="12" r="1.5" /><circle cx="19" cy="12" r="1.5" /></svg>
+            <button type="button" className="mobile-reading-tools__more" aria-label="Page menu" aria-expanded={moreOpen} title="Page menu" onClick={() => { setMoreOpen((open) => !open); setNavOpen(false); }}>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14" /></svg>
             </button>
             {moreOpen && (
               <div className="mobile-reading-tools__menu">
