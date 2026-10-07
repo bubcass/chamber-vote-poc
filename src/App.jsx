@@ -217,7 +217,7 @@ export default function App() {
             <img className="oireachtas-masthead__logo" src={`${import.meta.env.BASE_URL}oireachtas-logo.svg`} alt="" width="163" height="69" />
           </a>
           <a className="oireachtas-masthead__resource" href={OPEN_DATA_INSIGHTS_URL} aria-label="Open Data Insights home">
-            <span className="oireachtas-masthead__brand-mark" aria-hidden="true"><svg viewBox="0 0 1092 526" focusable="false"><use href={`${import.meta.env.BASE_URL}insights-house.svg#house-lockup`} /></svg></span>
+            <span className="oireachtas-masthead__brand-mark" aria-hidden="true"><svg viewBox="0 0 1092 526" focusable="false"><use href={`${import.meta.env.BASE_URL}insights-house.svg#house-lockup`} fill="currentColor" /></svg></span>
             <span className="oireachtas-masthead__brand-copy"><span className="oireachtas-masthead__brand-title">Open Data Insights</span><span className="oireachtas-masthead__brand-tagline">Parliamentary visual data</span></span>
           </a>
           <div className="oireachtas-masthead__actions" ref={mastheadActionsRef}>
