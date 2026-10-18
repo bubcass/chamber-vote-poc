@@ -1277,7 +1277,9 @@ select {
     grid-template-columns: minmax(160px, 1fr) auto minmax(160px, 1fr);
     align-items: center;
     width: 100%;
+    max-width: var(--page-max);
     height: 100%;
+    margin: 0 auto;
     padding: 0 18px;
 }
 
