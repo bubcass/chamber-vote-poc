@@ -6,6 +6,7 @@ on:
     paths:
       - ".github/workflows/fetch-votes.yml"
       - "src/**"
+      - "public/chambers/seanad/seatAssignmentsHistory.csv"
       - "index.html"
       - "package.json"
       - "package-lock.json"
