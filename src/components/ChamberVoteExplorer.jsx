@@ -718,7 +718,7 @@ export default function ChamberVoteExplorer({ chamber }) {
           Vote Explorer is part of our{" "}
           <a
             className="vote-debate-meta__link"
-            href="https://bubcass.github.io/open-data-insights/"
+            href={import.meta.env.MODE === "aws" ? "/" : "https://bubcass.github.io/open-data-insights/"}
           >
             Open Data Insights
           </a>{" "}

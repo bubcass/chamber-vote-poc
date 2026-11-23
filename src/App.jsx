@@ -3,7 +3,7 @@ import ChamberVoteExplorer from "./components/ChamberVoteExplorer.jsx";
 import { chamberConfigs, defaultChamberKey } from "./chambers/config.js";
 import "./styles.css";
 
-const OPEN_DATA_INSIGHTS_URL = "https://bubcass.github.io/open-data-insights/";
+const OPEN_DATA_INSIGHTS_URL = import.meta.env.MODE === "aws" ? "/" : "https://bubcass.github.io/open-data-insights/";
 const THEME_STORAGE_KEY = "oireachtas-insights-theme";
 const LEGACY_THEME_STORAGE_KEY = "vote-explorer-theme";
 const OIREACHTAS_FOOTER_LINKS = [
